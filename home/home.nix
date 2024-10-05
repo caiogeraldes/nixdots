@@ -12,6 +12,7 @@
     ./gtk.nix
     ./hypr.nix
     ./nvim.nix
+    ./tmux.nix
   ];
 
   home.sessionVariables = {
