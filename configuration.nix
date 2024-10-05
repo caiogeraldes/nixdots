@@ -9,7 +9,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./asthetics.nix
+      ./aesthetics.nix
     ];
 
   # Bootloader.
@@ -117,19 +117,13 @@
     nerdfonts
     ouch
     gh
-    yazi
-    eza
     ripgrep
-    bat
-    feh
     gcc
     clang
     yarn
     nodejs_22
     go
     zig
-    libxml2
-    libgit2
     gnumake
     cmake
     unzip
@@ -140,9 +134,6 @@
     killall
     brightnessctl
     betterlockscreen
-    waybar
-    mako
-    libnotify
     openssl
   ];
 
