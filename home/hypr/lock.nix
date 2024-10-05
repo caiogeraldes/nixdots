@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       background  = {
-        path = "/home/caiog/img/the_biglin_brothers_racing_1953.7.1.jpg";
+        path = "/home/caiog/img/wallp/01.jpg";
         color = "rgba(25, 20, 20, 1.0)";
         blur_passes = 2;
         blur_size = 7;
