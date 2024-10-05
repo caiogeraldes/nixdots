@@ -123,6 +123,7 @@
     btop
     fzf
     nerdfonts
+    noto-fonts
     ouch
     gh
     ripgrep

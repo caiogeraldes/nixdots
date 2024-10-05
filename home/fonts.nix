@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  home.file."$(config.home.homeDirectory)/.local/share/fonts/" = {
+  home.file."${config.xdg.dataHome}/fonts/" = {
     source = ../assets/fonts;
     recursive = true;
   };
