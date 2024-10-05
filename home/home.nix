@@ -6,6 +6,7 @@
   home.username = "caiog";
   home.homeDirectory = "/home/caiog";
   imports = [
+    ./terminal.nix
     ./xdg.nix
     ./programs.nix
     ./gtk.nix
