@@ -63,6 +63,8 @@
       syntaxHighlighting.enable = true;
       shellAliases = {
         vim = "nvim";
+        nvimconf = "cd  $HOME/dotfiles/configs/nvim & nvim";
+        cnc = "cd  $HOME/dotfiles/configs/nvim";
         # ll = "ls -l";
         lg="eza --group-directories-first --icons --git-ignore";
         la="eza --group-directories-first --icons -al --git";
