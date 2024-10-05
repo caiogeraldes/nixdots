@@ -17,8 +17,8 @@
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
-                "v8-9.7.106.18"
-              ];
+    "v8-9.7.106.18"
+  ];
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
@@ -26,51 +26,50 @@
   
   boot.loader = {
       efi = {
-  canTouchEfiVariables = true;
-  # assuming /boot is the mount point of the  EFI partition in NixOS (as the installation section recommends).
-  efiSysMountPoint = "/boot";
+        canTouchEfiVariables = true;
+        # assuming /boot is the mount point of the  EFI partition in NixOS (as the installation section recommends).
+        efiSysMountPoint = "/boot";
       };
       grub = {
-      # despite what the configuration.nix manpage seems to indicate,
-      # as of release 17.09, setting device to "nodev" will still call
-      # `grub-install` if efiSupport is true
-      # (the devices list is not used by the EFI grub install,
-      # but must be set to some value in order to pass an assert in grub.nix)
-      devices = [ "nodev" ];
-      efiSupport = true;
-      enable = true;
-      default = "saved";
-      # extraEntries = "GRUB_SAVEDEFAULT=true";
-      extraEntries = ''
-	GRUB_SAVEDEFAULT=true
-
-	menuentry "Windows" {
-	  insmod part_gpt
-	  insmod fat
-	  insmod search_fs_uuid
-	  insmod chain
-	  search --fs-uuid --set=root A8A2-9611
-	  chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-	  }
+        # despite what the configuration.nix manpage seems to indicate,
+        # as of release 17.09, setting device to "nodev" will still call
+        # `grub-install` if efiSupport is true
+        # (the devices list is not used by the EFI grub install,
+        # but must be set to some value in order to pass an assert in grub.nix)
+        devices = [ "nodev" ];
+        efiSupport = true;
+        enable = true;
+        default = "saved";
+        # extraEntries = "GRUB_SAVEDEFAULT=true";
+        extraEntries = ''
+          GRUB_SAVEDEFAULT=true 
+	  menuentry "Windows" {
+	    insmod part_gpt 
+	    insmod fat
+	    insmod search_fs_uuid
+	    insmod chain
+	    search --fs-uuid --set=root A8A2-9611
+	    chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+	    }
 	'';
       };
-      };
-
-    networking.hostName = "nixos"; # Define your hostname.
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-    # Configure network proxy if necessary
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Enable networking
-    networking.networkmanager.enable = true;
-
-    # Set your time zone.
-    time = {
-      timeZone = "America/Sao_Paulo";
-      hardwareClockInLocalTime = true;
     };
+
+  networking.hostName = "nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Set your time zone.
+  time = {
+    timeZone = "America/Sao_Paulo";
+    hardwareClockInLocalTime = true;
+  };
 
   # Select internationalisation properties.
   i18n.defaultLocale = "pt_BR.UTF-8";
@@ -143,6 +142,7 @@
     brightnessctl
     openssl
     calibre
+    just
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -175,18 +175,16 @@
   programs.hyprland.enable = true;
   services.displayManager.sddm = {
     enable = true;
-  wayland.enable = true;
+    wayland.enable = true;
   };
 
   
-security.rtkit.enable = true;
-services.pipewire = {
-  enable = true;
-  alsa.enable = true;
-  alsa.support32Bit = true;
-  pulse.enable = true;
-  # If you want to use JACK applications, uncomment this
-  #jack.enable = true;
-};
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
 }
