@@ -10,6 +10,7 @@
     ./programs.nix
     ./gtk.nix
     ./hypr.nix
+    ./nvim.nix
   ];
 
   home.sessionVariables = {
