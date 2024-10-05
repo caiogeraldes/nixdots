@@ -9,8 +9,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../modules/swap.nix
       ../modules/aesthetics.nix
       ../modules/rpkgs.nix
+      ../modules/v8.nix
+      ../modules/samba.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
