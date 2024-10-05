@@ -10,7 +10,12 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./aesthetics.nix
+      ./rpkgs.nix
     ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+                "v8-9.7.106.18"
+              ];
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;

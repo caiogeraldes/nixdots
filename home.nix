@@ -27,8 +27,10 @@ in {
     wl-clipboard-rs
     hyprpaper
     rPackages.tidyverse
+    rPackages.openssl
     rPackages.devtools
     rPackages.xml2
+    rPackages.usethis
     rPackages.git2r
     rPackages.rnaturalearth
     rPackages.rnaturalearthdata
@@ -139,6 +141,7 @@ in {
     EDITOR = "nvim";
     MANROFFOPT = "-c";
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+    R_LIBS_USER = "$HOME/.R/site-library/";
   };
 
   # Let Home Manager install and manage itself.
