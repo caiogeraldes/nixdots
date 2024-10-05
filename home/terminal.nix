@@ -68,7 +68,8 @@
         path = "${config.xdg.dataHome}/zsh/history";
       };
       sessionVariables = {
-       PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts";
+        TEXMFHOME = "$HOME/.texlive2023/";
+        PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts";
       };
       oh-my-zsh = {
         enable = true;
