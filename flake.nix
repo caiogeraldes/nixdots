@@ -18,7 +18,7 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        ./system/configuration.nix
       ];
     };
       homeConfigurations."caiog" = home-manager.lib.homeManagerConfiguration {
@@ -26,10 +26,7 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        modules = [ ./home/home.nix ];
       };
   };
 }

@@ -1,23 +1,5 @@
-{ config, pkgs, ... }:
-let
-  rPackages = pkgs.rPackages;
-in {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "caiog";
-  home.homeDirectory = "/home/caiog";
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    desktop="${config.home.homeDirectory}/desktop";
-    download="${config.home.homeDirectory}/down";
-    templates="${config.home.homeDirectory}/templates";
-    documents="${config.home.homeDirectory}/docs";
-    music="${config.home.homeDirectory}/mus";
-    pictures="${config.home.homeDirectory}/img";
-    videos="${config.home.homeDirectory}/vids";
-    publicShare="${config.home.homeDirectory}/pub";
-  };
+{ config, pkgs, inputs, ... }:
+{
 
   home.packages = with pkgs; [
     zsh
@@ -26,19 +8,10 @@ in {
     zathura
     wl-clipboard-rs
     hyprpaper
-    rPackages.tidyverse
-    rPackages.openssl
-    rPackages.devtools
-    rPackages.xml2
-    rPackages.usethis
-    rPackages.git2r
-    rPackages.rnaturalearth
-    rPackages.rnaturalearthdata
     nautilus
     gtk-engine-murrine
     tmux
   ];
-
   programs = {
     git = {
       enable = true;
@@ -136,55 +109,4 @@ in {
       font = "Mononoki Nerd Font 10";
     };
   };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    MANROFFOPT = "-c";
-    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
-    R_LIBS_USER = "$HOME/.R/site-library/";
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Gruvbox-Material-Dark";
-      # package = pkgs.catppuccin-gtk;
-    };
-    iconTheme = {
-      name = "Gruvbox-Material-Dark";
-    };
-    cursorTheme = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
-      size = 24;
-    };
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-  };
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
 }

@@ -9,8 +9,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/aesthetics.nix
-      ./modules/rpkgs.nix
+      ../modules/aesthetics.nix
+      ../modules/rpkgs.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
