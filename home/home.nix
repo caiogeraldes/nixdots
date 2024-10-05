@@ -9,6 +9,7 @@
     ./xdg.nix
     ./programs.nix
     ./gtk.nix
+    ./hypr.nix
   ];
 
   home.sessionVariables = {

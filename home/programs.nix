@@ -7,9 +7,7 @@
     texlab
     zathura
     wl-clipboard-rs
-    hyprpaper
     nautilus
-    gtk-engine-murrine
     tmux
   ];
   programs = {
@@ -78,7 +76,7 @@
         path = "${config.xdg.dataHome}/zsh/history";
       };
       sessionVariables = {
-       PATH = "$PATH:$HOME/.cargo/bin";
+       PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts";
       };
       oh-my-zsh = {
         enable = true;
