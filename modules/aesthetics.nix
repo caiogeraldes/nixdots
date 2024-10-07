@@ -19,5 +19,7 @@
     clementine
     playerctl
     avizo
+    jq
+    wlprop
   ];
 }

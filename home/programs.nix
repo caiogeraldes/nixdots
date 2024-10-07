@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{  lib, pkgs, ... }:
 {
 
   home.packages = with pkgs; [
@@ -13,6 +13,7 @@
     sioyek
     grim
     slurp
+    xwayland
   ];
 
   services = {

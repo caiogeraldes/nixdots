@@ -1,9 +1,10 @@
 { config, pkgs, inputs, ... }:
 with pkgs;
 let
-  R-with-my-packages = rWrapper.override{ 
-    packages = with rPackages; [ 
-      ggplot2 dplyr xts 
+  R-pkgs = with rPackages; [
+      ggplot2
+      dplyr
+      xts 
       tidyverse
       openssl
       devtools
@@ -16,11 +17,18 @@ let
       MASS
       mvtnorm
       loo
-    ]; 
+
+  ];
+  R-with-my-packages = rWrapper.override{ 
+    packages = R-pkgs;
+  };
+  RStudio-with-my-packages = rstudioWrapper.override{
+    packages = R-pkgs;
   };
 in {
   environment.systemPackages = [
     pkgs.cmdstan
     R-with-my-packages
+    RStudio-with-my-packages
   ];
 }

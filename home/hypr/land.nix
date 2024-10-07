@@ -2,6 +2,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    xwayland.enable = true;
     extraConfig = ''
       env = XCURSOR_THEME,Nordzy-cursors
       env = XCURSOR_SIZE,24

@@ -18,6 +18,7 @@
   ];
 
   home.sessionVariables = {
+    OBSIDIAN_USE_WAYLAND=1;
     EDITOR = "nvim";
     MANROFFOPT = "-c";
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
