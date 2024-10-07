@@ -141,6 +141,7 @@
     cargo
     mercurial
     luarocks
+    feh
     tree-sitter
     lua
     killall

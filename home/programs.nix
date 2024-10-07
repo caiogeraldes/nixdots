@@ -11,6 +11,8 @@
     tmux
     newsboat
     sioyek
+    grim
+    slurp
   ];
 
   services = {
