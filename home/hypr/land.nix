@@ -142,6 +142,10 @@
         ",XF86MonBrightnessDown, exec, lightctl down"
       ];
       windowrulev2 = "suppressevent maximize, class:.*"; # You'll probably like this.
+      windowrule = [ "tile, ^(R_x11)$" ];
+      xwayland = {
+        force_zero_scaling = true;
+      };
     };
   };
 }
