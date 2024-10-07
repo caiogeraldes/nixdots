@@ -14,6 +14,7 @@
       ../modules/rpkgs.nix
       ../modules/v8.nix
       ../modules/samba.nix
+      ./battery.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
