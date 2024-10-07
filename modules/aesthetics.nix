@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    calc
     hyprpaper
     gtk-engine-murrine
     hyprlock
@@ -14,5 +15,8 @@
     wofi
     rofi-wayland
     libnotify
+    spotify
+    clementine
+    playerctl
   ];
 }
