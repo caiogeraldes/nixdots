@@ -18,5 +18,6 @@
     spotify
     clementine
     playerctl
+    avizo
   ];
 }

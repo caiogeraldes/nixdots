@@ -14,7 +14,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "kitty -e yazi";
       "$menu" = "rofi";
-      "exec-once" = "waybar & hyprpaper & systemctl --user start plasma-polkit-agent";
+      "exec-once" = "waybar & hyprpaper & avizo-service & systemctl --user start plasma-polkit-agent";
       general = { 
           gaps_in = 5;
           gaps_out = 20;
@@ -121,13 +121,20 @@
         "$mainMod, mouse:273, resizewindow"
       ];
       bindel = [
-        # Laptop multimedia keys for volume and LCD brightness
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ",XF86MonBrightnessUp, exec, brightnessctl s 5%+"
-        ",XF86MonBrightnessDown, exec, brightnessctl s 5%- -n15"
+        # # Laptop multimedia keys for volume and LCD brightness
+        # ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        # ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        # ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        # ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        # ",XF86MonBrightnessUp, exec, brightnessctl s 5%+"
+        # ",XF86MonBrightnessDown, exec, brightnessctl s 5%- -n15"
+        # Avizo
+        ",XF86AudioRaiseVolume, exec, volumectl -u up"
+        ",XF86AudioLowerVolume, exec, volumectl -u down"
+        ",XF86AudioMute, exec, volumectl toggle-mute"
+        ",XF86AudioMicMute, exec, volumectl -m toggle-mute"
+        ",XF86MonBrightnessUp, exec, lightctl up"
+        ",XF86MonBrightnessDown, exec, lightctl down"
       ];
       windowrulev2 = "suppressevent maximize, class:.*"; # You'll probably like this.
     };
