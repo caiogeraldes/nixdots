@@ -14,6 +14,7 @@
     grim
     slurp
     xwayland
+    rustup
   ];
 
   services = {
