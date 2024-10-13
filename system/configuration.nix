@@ -150,6 +150,13 @@
     openssl
     calibre
     just
+    (catppuccin-sddm.override {
+      flavor = "latte";
+      font  = "Mononoki Nerd Font";
+      fontSize = "11";
+      background = "${../assets/the_biglin_brothers_racing_1953.7.1.jpg}";
+      loginBackground = true;
+    })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -183,6 +190,8 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
+    theme = "catppuccin-latte";
+    package = pkgs.kdePackages.sddm;
   };
 
   
