@@ -26,6 +26,7 @@ return {
   'chrisbra/unicode.vim',
   'IndianBoy42/tree-sitter-just',
   'NoahTheDuke/vim-just',
+  'elkowar/yuck.vim',
 
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax

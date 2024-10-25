@@ -10,6 +10,7 @@ return {
       'yaml',
       'toml',
       css = { rgb_fn = true }, -- Enable parsing rgb(...) functions in css.
+      scss = { rgb_fn = true }, -- Enable parsing rgb(...) functions in css.
       html = {
         mode = 'foreground',
       },

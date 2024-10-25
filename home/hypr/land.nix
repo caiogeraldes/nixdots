@@ -55,6 +55,9 @@
           ];
 
       };
+      gestures = {
+        workspace_swipe = true;
+      };
       misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
@@ -76,7 +79,12 @@
         "$mainMod, V, togglefloating,"
         "$mainMod, D, exec, $menu -modi drun,run,window,filebrowser -show drun -sidebar-mode"
         "$mainMod, O, exec, $menu -modi drun,run,window,filebrowser -show filebrowser -sidebar-mode"
+
+        # Layout
         "$mainMod, L, layoutmsg, swapnext"
+        "$mainMod, K, layoutmsg, orientationcycle left top center"
+        "$mainMod, [, layoutmsg, mfact -0.2"
+        "$mainMod, ], layoutmsg, mfact +0.2"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"

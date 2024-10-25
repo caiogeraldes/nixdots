@@ -15,6 +15,9 @@
     slurp
     xwayland
     rustup
+    eww-wayland
+    python3
+    socat
   ];
 
   services = {

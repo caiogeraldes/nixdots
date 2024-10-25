@@ -2,22 +2,23 @@
 with pkgs;
 let
   R-pkgs = with rPackages; [
-      ggplot2
-      dplyr
-      xts 
-      tidyverse
-      openssl
-      devtools
-      xml2
-      usethis
-      git2r
-      rnaturalearth
-      rnaturalearthdata
-      coda
-      MASS
-      mvtnorm
-      loo
-
+    ggplot2
+    dplyr
+    xts 
+    tidyverse
+    openssl
+    devtools
+    xml2
+    usethis
+    git2r
+    rnaturalearth
+    rnaturalearthdata
+    coda
+    MASS
+    mvtnorm
+    loo
+    kableExtra
+    FactoMineR
   ];
   R-with-my-packages = rWrapper.override{ 
     packages = R-pkgs;
