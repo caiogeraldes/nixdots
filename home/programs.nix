@@ -15,7 +15,7 @@
     slurp
     xwayland
     rustup
-    eww-wayland
+    eww
     python3
     socat
   ];
