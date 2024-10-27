@@ -3,7 +3,6 @@
 
   home.packages = with pkgs; [
     zsh
-    texliveFull
     texlab
     zathura
     wl-clipboard-rs
@@ -18,6 +17,8 @@
     eww
     python3
     socat
+    qbittorrent
+    vlc
   ];
 
   services = {

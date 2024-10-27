@@ -79,6 +79,7 @@
         "$mainMod, V, togglefloating,"
         "$mainMod, D, exec, $menu -modi drun,run,window,filebrowser -show drun -sidebar-mode"
         "$mainMod, O, exec, $menu -modi drun,run,window,filebrowser -show filebrowser -sidebar-mode"
+        "$mainMod, T, exec, $HOME/.scripts/texdocer"
 
         # Layout
         "$mainMod, L, layoutmsg, swapnext"
