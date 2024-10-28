@@ -62,7 +62,6 @@
         update = "sudo nixos-eebuild switch";
         _cat="/usr/bin/cat";
         cat="bat";
-        calibre="QT_SCALE_FACTOR_ROUNDING_POLICY=RoundPreferFloor calibre";
       };
       history = {
         size = 10000;
@@ -71,7 +70,6 @@
       sessionVariables = {
         TEXMFHOME = "$HOME/.texlive2023/";
         PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts";
-        QT_SCALE_FACTOR_ROUNDING_POLICY="RoundPreferFloor";
       };
       oh-my-zsh = {
         enable = true;
