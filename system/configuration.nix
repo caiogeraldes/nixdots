@@ -16,6 +16,7 @@
       ../modules/v8.nix
       ../modules/samba.nix
       ./battery.nix
+      ../modules/video.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
