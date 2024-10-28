@@ -19,6 +19,7 @@
     socat
     qbittorrent
     vlc
+    mpv
   ];
 
   services = {
