@@ -12,6 +12,7 @@
       ../modules/swap.nix
       ../modules/aesthetics.nix
       ../modules/rpkgs.nix
+      ../modules/tex.nix
       ../modules/v8.nix
       ../modules/samba.nix
       ./battery.nix
@@ -210,6 +211,7 @@
   };
 
   programs.nix-ld.enable = true;
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # programs.nix-ld.libraries = with pkgs; [
   #   # Add any missing dynamic libraries for unpackaged programs
