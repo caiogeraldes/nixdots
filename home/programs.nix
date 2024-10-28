@@ -6,7 +6,7 @@
     texlab
     zathura
     wl-clipboard-rs
-    nautilus
+    gnome.nautilus
     tmux
     newsboat
     sioyek
