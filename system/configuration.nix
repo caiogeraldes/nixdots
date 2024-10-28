@@ -151,6 +151,7 @@
     openssl
     calibre
     just
+    texliveFull
     (catppuccin-sddm.override {
       flavor = "latte";
       font  = "Mononoki Nerd Font";
