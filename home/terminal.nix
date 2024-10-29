@@ -35,7 +35,7 @@
       ];
     };
     yazi = {
-      enable = true;
+      enable = false;
       enableZshIntegration = true;
     };
     eza = {
@@ -87,6 +87,9 @@
         ];
         theme = "robbyrussell";
       };
+      initExtra = "
+        source $HOME/.scripts/yy
+        ";
     };
   };
 }
