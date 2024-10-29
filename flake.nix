@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
