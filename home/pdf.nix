@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     zathura
     sioyek
-    pftk
+    pdftk
     poppler_utils
     ocrmypdf
     tesseract4
