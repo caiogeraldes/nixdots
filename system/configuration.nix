@@ -9,6 +9,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../modules/ssh.nix
       ../modules/swap.nix
       ../modules/aesthetics.nix
       ../modules/rpkgs.nix
@@ -19,7 +20,6 @@
       ../modules/battery.nix
       ../modules/audio.nix
       ../modules/bluetooth.nix
-      ../modules/ssh.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [

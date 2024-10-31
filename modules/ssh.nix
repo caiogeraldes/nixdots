@@ -3,5 +3,4 @@
   services.openssh = {
     enable = true;
   };
-
 }
