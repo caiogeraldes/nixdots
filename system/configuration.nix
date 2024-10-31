@@ -9,15 +9,17 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../modules/ssh.nix
       ../modules/swap.nix
       ../modules/aesthetics.nix
       ../modules/rpkgs.nix
       ../modules/tex.nix
       ../modules/v8.nix
       ../modules/samba.nix
-      ./battery.nix
       ../modules/video.nix
+      ../modules/battery.nix
+      ../modules/audio.nix
+      ../modules/bluetooth.nix
+      ../modules/ssh.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -207,14 +209,6 @@
   };
 
   
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   programs.nix-ld.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
 
