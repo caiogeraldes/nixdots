@@ -15,8 +15,6 @@
     wofi
     rofi-wayland
     libnotify
-    spotify
-    clementine
     playerctl
     avizo
     jq
