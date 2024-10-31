@@ -161,6 +161,7 @@
       background = "${../assets/the_biglin_brothers_racing_1953.7.1.jpg}";
       loginBackground = true;
     })
+    inputs.zen-browser.packages."${system}".specific
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
