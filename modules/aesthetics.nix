@@ -19,5 +19,6 @@
     avizo
     jq
     wlprop
+    mpris-scrobbler
   ];
 }
