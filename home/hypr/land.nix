@@ -80,6 +80,7 @@
         "$mainMod, D, exec, $menu -modi drun,run,window,filebrowser -show drun -sidebar-mode"
         "$mainMod, O, exec, $menu -modi drun,run,window,filebrowser -show filebrowser -sidebar-mode"
         "$mainMod, T, exec, $HOME/.scripts/texdocer"
+        "$mainMod CTRL, P, exec, playerctl play-pause"
 
         # Layout
         "$mainMod, L, layoutmsg, swapnext"
