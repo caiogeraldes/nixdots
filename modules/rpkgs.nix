@@ -19,6 +19,8 @@ let
     loo
     kableExtra
     FactoMineR
+    V8
+    dagitty
   ];
   R-with-my-packages = rWrapper.override{ 
     packages = R-pkgs;
