@@ -15,6 +15,7 @@
     ./tmux.nix
     ./fonts.nix
     ./newsboat.nix
+    ./pdf.nix
   ];
 
   home.sessionVariables = {

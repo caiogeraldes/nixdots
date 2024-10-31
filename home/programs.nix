@@ -4,12 +4,10 @@
   home.packages = with pkgs; [
     zsh
     texlab
-    zathura
     wl-clipboard-rs
     gnome.nautilus
     tmux
     newsboat
-    sioyek
     grim
     slurp
     xwayland
@@ -21,11 +19,6 @@
     nicotine-plus
     vlc
     mpv
-    pftk
-    poppler_utils
-    ocrmypdf
-    tesseract4
-    pdf4qt
   ];
 
   services = {
