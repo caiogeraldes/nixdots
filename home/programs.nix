@@ -20,6 +20,11 @@
     qbittorrent
     vlc
     mpv
+    pftk
+    poppler_utils
+    ocrmypdf
+    tesseract4
+    pdf4qt
   ];
 
   services = {
