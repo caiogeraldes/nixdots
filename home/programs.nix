@@ -19,6 +19,7 @@
     nicotine-plus
     vlc
     mpv
+    yazi
   ];
 
   services = {
