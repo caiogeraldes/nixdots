@@ -55,6 +55,8 @@ return {
         ['<C-y>'] = cmp.mapping.confirm { select = true },
         ---@diagnostic disable-next-line: undefined-field
         ['<C-CR>'] = cmp.mapping.confirm { select = true },
+        ---@diagnostic disable-next-line: undefined-field
+        ['<C-Tab>'] = cmp.mapping.confirm { select = true },
 
         -- Manually trigger a completion from nvim-cmp.
         --  Generally you don't need this, because nvim-cmp will display

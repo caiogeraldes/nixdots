@@ -13,6 +13,7 @@ return {
       -- Lines
       vim.keymap.set('n', '<leader>rl', '<cmd>call SendLineToR("stay")<cr>', { desc = 'Send current [L]ine' })
       vim.keymap.set('n', '<C-CR>', '<cmd>call SendLineToR("down")<cr>', { desc = 'Send current line' })
+      vim.keymap.set('n', '<leader><CR>', '<cmd>call SendLineToR("down")<cr>', { desc = 'Send current line' })
       vim.keymap.set('n', '<leader>ra', '<cmd>:call SendAboveLinesToR()<cr>', { desc = 'RSendAboveLines' })
       vim.keymap.set('n', '<leader>rL', '<cmd>:call SendLineToRAndInsertOutput()<cr>', { desc = 'RDSendLineAndInsertOutput' })
       -- Blocks
