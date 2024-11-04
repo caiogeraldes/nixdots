@@ -13,5 +13,8 @@
       libvdpau-va-gl
     ];
   };
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+  ];
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 }
