@@ -146,6 +146,7 @@
     unzip
     R
     cargo
+    cargo-update
     mercurial
     luarocks
     imv
