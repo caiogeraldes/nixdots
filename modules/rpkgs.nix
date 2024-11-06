@@ -21,6 +21,12 @@ let
     FactoMineR
     V8
     dagitty
+    animation
+    globe
+    spData
+    ellipse
+    plotrix
+    geosphere
   ];
   R-with-my-packages = rWrapper.override{ 
     packages = R-pkgs;
