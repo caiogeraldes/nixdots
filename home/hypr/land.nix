@@ -19,8 +19,8 @@
       general = { 
           gaps_in = 5;
           gaps_out = 20;
-          border_size = 2;
-          "col.active_border" =  "rgba(7daea3ee) rgba(d4be98ee) 45deg"; # #7daea3 #d4be98
+          border_size = 4;
+          "col.active_border" =  "rgba(89b482ee) rgba(7daea3ee) 45deg"; # #89b482 #7daea3
           "col.inactive_border" = "rgba(928374aa)"; # #928374
           resize_on_border = true;
           allow_tearing = false;
