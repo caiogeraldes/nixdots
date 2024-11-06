@@ -15,7 +15,6 @@
     eww
     python3
     socat
-    qbittorrent
     nicotine-plus
     vlc
     mpv

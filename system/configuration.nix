@@ -24,6 +24,7 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "v8-9.7.106.18"
+    "qbittorrent-4.6.4"
   ];
 
   # Bootloader.
@@ -166,6 +167,7 @@
       loginBackground = true;
     })
     inputs.zen-browser.packages."${system}".specific
+    qbittorrent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
