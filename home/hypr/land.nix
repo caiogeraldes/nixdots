@@ -30,11 +30,6 @@
         rounding = 10;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-
-        drop_shadow = false;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)"; #1a1a1a
         blur = {
           enabled = true;
           size = 3;
@@ -53,7 +48,6 @@
           "fade, 1, 7, default"
           "workspaces, 1, 6, default"
           ];
-
       };
       gestures = {
         workspace_swipe = true;
@@ -62,7 +56,6 @@
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
-
       input = {
         kb_layout = "br";
         touchpad = {
