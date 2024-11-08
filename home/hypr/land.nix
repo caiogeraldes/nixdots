@@ -79,8 +79,10 @@
         # Layout
         "$mainMod, L, layoutmsg, swapnext"
         "$mainMod, K, layoutmsg, orientationcycle left top center"
-        "$mainMod, [, layoutmsg, mfact -0.2"
-        "$mainMod, ], layoutmsg, mfact +0.2"
+        "$mainMod, J, layoutmsg, mfact +0.1"
+        "$mainMod, H, layoutmsg, mfact -0.1"
+        "$shiftMod, J, layoutmsg, mfact +0.02"
+        "$shiftMod, H, layoutmsg, mfact -0.02"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
