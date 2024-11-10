@@ -20,6 +20,7 @@
       ../modules/battery.nix
       ../modules/audio.nix
       ../modules/bluetooth.nix
+      ../modules/steam.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
