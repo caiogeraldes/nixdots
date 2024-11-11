@@ -27,6 +27,23 @@ let
     ellipse
     plotrix
     geosphere
+    lubridate
+    mice
+    corrplot
+    httr
+    jsonlite
+    rvest
+    tidytext
+    gutenbergr
+    patchwork
+    wordcloud2
+    ROCR
+    shinythemes
+    plotly
+    caret
+    shiny
+    skimr
+    randomForest
   ];
   R-with-my-packages = rWrapper.override{ 
     packages = R-pkgs;
