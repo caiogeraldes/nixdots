@@ -14,7 +14,7 @@
       ../modules/aesthetics.nix
       ../modules/rpkgs.nix
       ../modules/tex.nix
-      ../modules/v8.nix
+      # ../modules/v8.nix
       ../modules/samba.nix
       ../modules/video.nix
       ../modules/battery.nix
