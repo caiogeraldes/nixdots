@@ -16,12 +16,16 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
   in {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./system/configuration.nix
-      ];
+    nixosConfigurations = {
+      rua = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/rua
+        ];
+      };
     };
+    # .default = nixpkgs.lib.nixosSystem {
+    # };
     homeConfigurations."caiog" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
