@@ -17,8 +17,7 @@
       ../../modules/tex.nix
       #  ../../modules/v8.nix
       ../../modules/samba.nix
-      ../../modules/intel_video.nix
-      ../../modules/battery.nix
+      ../../modules/nvidia_video.nix
       ../../modules/audio.nix
       ../../modules/bluetooth.nix
       ../../modules/network.nix
@@ -205,6 +204,5 @@
   #   # Add any missing dynamic libraries for unpackaged programs
   #   # here, NOT in environment.systemPackages
   # ];
-  networking.hostName = "nixrua"; # Define your hostname.
-
+  networking.hostName = "nixcasa"; # Define your hostname.
 }

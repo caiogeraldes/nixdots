@@ -23,9 +23,13 @@
           ./hosts/rua
         ];
       };
+      wkst = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/wkst
+        ];
+      };
     };
-    # .default = nixpkgs.lib.nixosSystem {
-    # };
     homeConfigurations."caiog" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
