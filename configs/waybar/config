@@ -1,0 +1,84 @@
+{
+	"layer": "top",
+	"modules-left": ["custom/launcher","custom/media"],
+	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["tray","backlight","wireplumber","clock", "battery","custom/power"],
+	
+	"wireplumber": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "󰖁",
+		"on-click":"wpctl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		}
+	},
+
+
+	"network": {
+		"tooltip": false,
+		"format-wifi": "  {essid}",
+		"format-ethernet": ""
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+                "on-scroll-up": "brightnessctl s 500+",
+		"on-scroll-down": "brightnessctl s 500-"
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+	"tray":{
+		"icon-size":18,
+		"spacing": 10
+	},
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/media": {
+        "interval": 1,
+        "format": "{}",
+        "return-type": "txt",
+        "max-length": 150,
+        "escape": true,
+        "exec": "mus",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next"
+    },
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "rofi -modi drun,run,window,filebrowser -show drun -sidebar-mode",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power":{
+        "format": " ",
+        "on-click": "bash ~/.config/rofi/leave/leave.sh",
+    },
+    "custom/wallpaper":{
+        "format":" ",
+        "on-click": "bash ~/.config/system_scripts/pkill_bc"
+    }
+}

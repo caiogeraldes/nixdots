@@ -1,0 +1,12 @@
+#! /bin/sh
+
+filename="$HOME/img/screen/$(date +%Y%m%d%H%M%S.png)"
+
+if [[ $1 == "region" ]]; then
+        grim -g "$(slurp)" $filename
+else
+        grim $filename
+fi
+wl-copy < $filename
+notify-send "Print salvo em $filename"
+

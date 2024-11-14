@@ -10,12 +10,14 @@
     ./xdg.nix
     ./programs.nix
     ./gtk.nix
-    ./hypr.nix
     ./nvim.nix
     ./tmux.nix
+    ./waybar.nix
+    ./zathura.nix
     ./fonts.nix
     ./newsboat.nix
     ./pdf.nix
+    ./scripts.nix
   ];
 
   home.sessionVariables = {

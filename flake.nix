@@ -30,13 +30,19 @@
         ];
       };
     };
-    homeConfigurations."caiog" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."rua" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
-      # modules = [ ./home/home.nix ];
-      modules = [ ./home/home_wkst.nix ];
+      modules = [
+      ./home/home.nix
+      ./home/hypr_rua.nix
+      ];
+    };
+    homeConfigurations."wkst" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+      ./home/home.nix 
+      ./home/hypr_wkst.nix
+      ];
     };
   };
 }

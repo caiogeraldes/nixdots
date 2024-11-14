@@ -1,0 +1,3 @@
+# /usr/bin/env bash
+
+texdoc $(cat $HOME/.scripts/texdoc.txt | rofi -dmenu -p texdoc)
