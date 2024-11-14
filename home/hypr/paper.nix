@@ -1,4 +1,4 @@
-{ config, input, ...}:
+{ config, ...}:
 
 {
   home.file."${config.xdg.userDirs.pictures}/wallp/01.jpg" = {

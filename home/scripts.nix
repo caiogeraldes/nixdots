@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, ... }:
 
 {
   home.file."${config.home.homeDirectory}/.scripts" = {

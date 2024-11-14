@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ ... }:
 {
   swapDevices = [ {
     device = "/var/lib/swapfile";
