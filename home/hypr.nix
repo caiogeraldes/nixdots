@@ -2,7 +2,7 @@
 {
   imports = [ 
     ./hypr/lock.nix 
-    ./hypr/land.nix
+    ./hypr/land1.nix
     ./hypr/paper.nix
   ];
 }

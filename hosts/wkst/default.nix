@@ -9,19 +9,19 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/ssh.nix
+#     ../../modules/ssh.nix
       ../../modules/sddm.nix
       ../../modules/swap.nix
       ../../modules/aesthetics.nix
-      ../../modules/rpkgs.nix
-      ../../modules/tex.nix
+#     ../../modules/rpkgs.nix
+#     ../../modules/tex.nix
       #  ../../modules/v8.nix
-      ../../modules/samba.nix
+#     ../../modules/samba.nix
       ../../modules/nvidia_video.nix
       ../../modules/audio.nix
-      ../../modules/bluetooth.nix
+#     ../../modules/bluetooth.nix
       ../../modules/network.nix
-      ../../modules/steam.nix
+#     ../../modules/steam.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -112,10 +112,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
-    # neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+#   inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    obsidian
+#   obsidian
     curl
     git
     kitty
@@ -123,9 +123,9 @@
     firefox
     btop
     fzf
-    nerdfonts
-    noto-fonts
-    ouch
+#   nerdfonts
+#   noto-fonts
+#   ouch
     gh
     ripgrep
     gcc
@@ -150,9 +150,9 @@
     openssl
     calibre
     just
-    texliveFull
-    inputs.zen-browser.packages."${system}".specific
-    qbittorrent
+#   texliveFull
+#   inputs.zen-browser.packages."${system}".specific
+#   qbittorrent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -204,5 +204,5 @@
   #   # Add any missing dynamic libraries for unpackaged programs
   #   # here, NOT in environment.systemPackages
   # ];
-  networking.hostName = "nixcasa"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
 }
