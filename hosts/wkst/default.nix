@@ -137,7 +137,7 @@
     gnumake
     cmake
     unzip
-    R
+    # R
     cargo
     cargo-update
     mercurial

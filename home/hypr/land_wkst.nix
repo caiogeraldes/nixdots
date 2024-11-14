@@ -9,7 +9,7 @@
       env = HYPRCURSOR_SIZE,24
     '';
     settings = {
-      monitor=",preferred,auto,1";
+      monitor="all,preferred,auto,1";
       "$mainMod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";
       "$terminal" = "kitty";
