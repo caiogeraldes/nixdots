@@ -21,6 +21,8 @@
     yazi
     miller
     tidy-viewer
+    fd
+    xdotool
   ];
 
   services = {
