@@ -49,18 +49,8 @@
         efiSupport = true;
         enable = true;
         default = "saved";
-        # extraEntries = "GRUB_SAVEDEFAULT=true";
-        extraEntries = ''
-          GRUB_SAVEDEFAULT=true 
-	  menuentry "Windows" {
-	    insmod part_gpt 
-	    insmod fat
-	    insmod search_fs_uuid
-	    insmod chain
-	    search --fs-uuid --set=root A8A2-9611
-	    chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-	    }
-	'';
+        extraEntries = "GRUB_SAVEDEFAULT=true";
+        useOSProber = true;
       };
     };
   boot.supportedFilesystems = [ "ntfs" ];
@@ -153,7 +143,7 @@
     texliveFull
     inputs.zen-browser.packages."${system}".specific
     transmission_4
-    stig
+    # stig
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -206,4 +196,14 @@
   #   # here, NOT in environment.systemPackages
   # ];
   networking.hostName = "nixcasa"; # Define your hostname.
+
+  fileSystems."/mnt/drive" = {
+    device = "/dev/sda1";
+    fsType = "ntfs";
+    options = [
+      "user"
+      "nofail"
+      "x-gvfs-view"
+    ];
+  };
 }

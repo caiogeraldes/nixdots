@@ -53,6 +53,7 @@
       syntaxHighlighting.enable = true;
       shellAliases = {
         vim = "nvim";
+        stig = "$HOME/.local/bin/stig";
         nvimconf = "cd  $HOME/dotfiles/configs/nvim & nvim";
         cnc = "cd  $HOME/dotfiles/configs/nvim";
         # ll = "ls -l";
@@ -70,7 +71,7 @@
       };
       sessionVariables = {
         TEXMFHOME = "$HOME/.texlive2023/";
-        PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts";
+        PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts:$HOME/.local/bin";
         # QT_SCALE_FACTOR_ROUNDING_POLICY="RoundPreferFloor";
       };
       oh-my-zsh = {
