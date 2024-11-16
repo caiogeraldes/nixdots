@@ -19,6 +19,8 @@
     vlc
     mpv
     yazi
+    miller
+    tidy-viewer
   ];
 
   services = {

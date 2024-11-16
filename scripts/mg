@@ -6,4 +6,4 @@
 # tabble.R /tmp/mg.tsv
 # tidy-viewer /tmp/mg.csv -t $(cat /tmp/mg.title) -u40 -c3 -D
 #
-morpheus-cli $1 -q | mlr --csv remove-empty-columns | tidy-viewer -t $1 -u40 -c3 -D
+morpheus-cli $1 -q | tidy-viewer -t $1 -u40 -c3 -D
