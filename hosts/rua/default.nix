@@ -154,6 +154,7 @@
     texliveFull
     inputs.zen-browser.packages."${system}".specific
     qbittorrent
+    libreoffice
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

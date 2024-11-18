@@ -8,5 +8,6 @@
     ocrmypdf
     tesseract4
     pdf4qt
+    pandoc
   ];
 }
