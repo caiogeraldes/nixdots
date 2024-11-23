@@ -1,33 +1,47 @@
 {
-	"layer": "top",
-	"modules-left": ["custom/launcher","custom/media"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["tray","backlight","wireplumber","clock", "battery","custom/power"],
-	
-	"wireplumber": {
-		"tooltip": false,
-		"scroll-step": 5,
-		"format": "{icon} {volume}%",
-		"format-muted": "󰖁",
-		"on-click":"wpctl set-sink-mute @DEFAULT_SINK@ toggle",
-		"format-icons": {
-			"default": ["", "", ""]
-		}
-	},
-
-
-	"network": {
-		"tooltip": false,
-		"format-wifi": "  {essid}",
-		"format-ethernet": ""
-	},
-	"backlight": {
-		"tooltip": false,
-		"format": " {}%",
-		"interval":1,
-                "on-scroll-up": "brightnessctl s 500+",
-		"on-scroll-down": "brightnessctl s 500-"
-	},
+    "layer": "top",
+    "modules-left": [
+        "custom/launcher",
+        "custom/media"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "backlight",
+        "wireplumber",
+        "hyprland/language",
+        "clock",
+        "battery",
+        "custom/power"
+    ],
+    "wireplumber": {
+        "tooltip": false,
+        "scroll-step": 5,
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰖁",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "network": {
+        "tooltip": false,
+        "format-wifi": "  {essid}",
+        "format-ethernet": ""
+    },
+    "backlight": {
+        "tooltip": false,
+        "format": " {}%",
+        "interval": 1,
+        "on-scroll-up": "brightnessctl s 500+",
+        "on-scroll-down": "brightnessctl s 500-"
+    },
     "battery": {
         "states": {
             "good": 95,
@@ -38,13 +52,20 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-	"tray":{
-		"icon-size":18,
-		"spacing": 10
-	},
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
     "clock": {
+        "format": "󰥔 {:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -68,17 +89,23 @@
         "on-click": "playerctl play-pause",
         "on-click-right": "playerctl next"
     },
-    "custom/launcher":{
+    "custom/launcher": {
         "format": " ",
         "on-click": "rofi -modi drun,run,window,filebrowser -show drun -sidebar-mode",
         "on-click-right": "killall rofi"
     },
-    "custom/power":{
+    "custom/power": {
         "format": " ",
-        "on-click": "bash ~/.config/rofi/leave/leave.sh",
+        "on-click": "bash ~/.config/rofi/leave/leave.sh"
     },
-    "custom/wallpaper":{
-        "format":" ",
+    "custom/wallpaper": {
+        "format": " ",
         "on-click": "bash ~/.config/system_scripts/pkill_bc"
+    },
+    "hyprland/language": {
+        "format": "  {}",
+        "format-pt": "abc",
+        "format-gr": "αβγ",
+        "keyboard-name": "at-translated-set-2-keyboard"
     }
 }
