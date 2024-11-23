@@ -2,7 +2,7 @@
 
 {
   home.file."${config.xdg.configHome}/waybar" = {
-    source = ../configs/waybar;
+    source = ../configs/waybar_rua;
     recursive = true;
   };
 }
