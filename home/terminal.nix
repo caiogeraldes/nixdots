@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./btop.nix
+  ];
   programs = {
     git = {
       enable = true;
@@ -54,6 +57,7 @@
       shellAliases = {
         vim = "nvim";
         stig = "$HOME/.local/bin/stig";
+        btop = "$HOME/.local/bin/btop";
         nvimconf = "cd  $HOME/dotfiles/configs/nvim & nvim";
         cnc = "cd  $HOME/dotfiles/configs/nvim";
         # ll = "ls -l";

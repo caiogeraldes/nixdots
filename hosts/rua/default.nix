@@ -122,7 +122,7 @@
     kitty
     wofi
     firefox
-    btop
+    # btop
     fzf
     nerdfonts
     noto-fonts
@@ -156,6 +156,7 @@
     inputs.zen-browser.packages."${system}".specific
     qbittorrent
     libreoffice
+    intel-gpu-tools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
