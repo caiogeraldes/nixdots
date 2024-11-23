@@ -2,10 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 
 {
   nixpkgs.config.allowBroken = true;
+  nixpkgs.config.btop = {
+    cudaSupport = true;
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   imports =
     [ # Include the results of the hardware scan.
@@ -27,6 +30,9 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "v8-9.7.106.18"
+  ];
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "cuda-merged"
   ];
 
   # Bootloader.
@@ -111,7 +117,6 @@
     kitty
     wofi
     firefox
-    btop
     fzf
     nerdfonts
     noto-fonts
@@ -127,7 +132,6 @@
     gnumake
     cmake
     unzip
-    # R
     cargo
     cargo-update
     mercurial
@@ -143,6 +147,8 @@
     texliveFull
     inputs.zen-browser.packages."${system}".specific
     transmission_4
+    nvtopPackages.full
+    btop
     # stig
   ];
 
