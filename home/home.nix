@@ -12,7 +12,6 @@
     ./gtk.nix
     ./nvim.nix
     ./tmux.nix
-    ./waybar.nix
     ./zathura.nix
     ./fonts.nix
     ./newsboat.nix
