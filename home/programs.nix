@@ -5,7 +5,7 @@
     zsh
     texlab
     wl-clipboard-rs
-    gnome.nautilus
+    nautilus
     tmux
     newsboat
     grim

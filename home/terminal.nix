@@ -41,7 +41,7 @@
     eza = {
       enable = true;
       enableZshIntegration = true;
-      icons = true;
+      icons = "auto";
       extraOptions = [
         "--group-directories-first"
       ];
