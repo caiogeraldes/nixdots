@@ -99,7 +99,7 @@
     isNormalUser = true;
     description = "Caio Geraldes";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = [];
   };
 
   # Allow unfree packages

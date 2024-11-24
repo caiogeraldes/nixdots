@@ -3,7 +3,7 @@
   programs = {
     btop = {
       enable = true;
-      package = pkgs.btop.overrideAttrs (oldAttrs: rec {
+      package = pkgs.btop.overrideAttrs (oldAttrs: {
               cmakeFlags = (oldAttrs.cmakeFlags or [ ]) ++ [
                 "-DBTOP_GPU=ON"
               ];

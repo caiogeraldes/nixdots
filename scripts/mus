@@ -1,54 +1,55 @@
 #! /usr/bin/env bash
 
-repeat(){
-	local start=1
-	local end=${1:-80}
-	local str="${2:-=}"
-	local range=$(seq $start $end)
-	for i in $range ; do echo -n "${str}"; done
+repeat() {
+    local start=1
+    local end=${1:-80}
+    local str="${2:-=}"
+    local range=$(seq $start $end)
+    for i in $range; do echo -n "${str}"; done
 }
 
-
-case "$(playerctl status 2> /dev/null)" in
-    ""|"Stopped") echo "   󰝛   " ;;
-    "Playing")
-        POS=$(playerctl metadata --format "{{ position }}")
-        TOTAL=$(playerctl metadata --format "{{ mpris:length }}")
-        PERC_POS=$( calc round\(round\($POS / $TOTAL,2\)\*10, 0\) )
-        PERC_PREVIOUS=$(calc $PERC_POS-1)
-        PERC_AFTER=$(calc 10-$PERC_POS)
-        A=$(repeat $PERC_PREVIOUS ─)
-        C=$(repeat $PERC_AFTER ─)
-        TITLE=$(playerctl metadata title);
-        ARTIST=$(playerctl metadata xesam:albumArtist 2> /dev/null);
-        if [ -z "$ARTIST" ]; then
-            ARTIST=$(playerctl metadata artist);
-        fi
-        if [ ${#ARTIST} -ge 30 ]; then
-            ARTIST="${ARTIST:0:30}…";
-        fi
-        if [ ${#TITLE} -ge 30 ]; then
-            TITLE="${TITLE:0:30}…";
-        fi
-        echo " $TITLE | $ARTIST $A|$C" ;; # | $ALBUM" ;;
-    "Paused")
-        POS=$(playerctl metadata --format "{{ position }}")
-        TOTAL=$(playerctl metadata --format "{{ mpris:length }}")
-        PERC_POS=$( calc round\(round\($POS / $TOTAL,2\)\*10, 0\) )
-        PERC_PREVIOUS=$(calc $PERC_POS-1)
-        PERC_AFTER=$(calc 10-$PERC_POS)
-        A=$(repeat $PERC_PREVIOUS ─)
-        C=$(repeat $PERC_AFTER ─)
-        TITLE=$(playerctl metadata title);
-        ARTIST=$(playerctl metadata xesam:albumArtist 2> /dev/null);
-        if [ -z "$ARTIST" ]; then
-            ARTIST=$(playerctl metadata artist);
-        fi
-        if [ ${#ARTIST} -ge 30 ]; then
-            ARTIST="${ARTIST:0:30}…";
-        fi
-        if [ ${#TITLE} -ge 30 ]; then
-            TITLE="${TITLE:0:30}…";
-        fi
-        echo "󰏤 $TITLE | $ARTIST $A|$C" ;; # | $ALBUM" ;;
+case "$(playerctl status 2>/dev/null)" in
+"" | "Stopped") echo "   󰝛   " ;;
+"Playing")
+    POS=$(playerctl metadata --format "{{ position }}")
+    TOTAL=$(playerctl metadata --format "{{ mpris:length }}")
+    PERC_POS=$(calc round\(round\($POS / $TOTAL,2\)\*10, 0\))
+    PERC_PREVIOUS=$(calc $PERC_POS-1)
+    PERC_AFTER=$(calc 10-$PERC_POS)
+    A=$(repeat $PERC_PREVIOUS ─)
+    C=$(repeat $PERC_AFTER ─)
+    TITLE=$(playerctl metadata title)
+    ARTIST=$(playerctl metadata xesam:albumArtist 2>/dev/null)
+    if [ -z "$ARTIST" ]; then
+        ARTIST=$(playerctl metadata artist)
+    fi
+    if [ ${#ARTIST} -ge 30 ]; then
+        ARTIST="${ARTIST:0:30}…"
+    fi
+    if [ ${#TITLE} -ge 30 ]; then
+        TITLE="${TITLE:0:30}…"
+    fi
+    echo " $TITLE | $ARTIST $A|$C"
+    ;; # | $ALBUM" ;;
+"Paused")
+    POS=$(playerctl metadata --format "{{ position }}")
+    TOTAL=$(playerctl metadata --format "{{ mpris:length }}")
+    PERC_POS=$(calc round\(round\($POS / $TOTAL,2\)\*10, 0\))
+    PERC_PREVIOUS=$(calc $PERC_POS-1)
+    PERC_AFTER=$(calc 10-$PERC_POS)
+    A=$(repeat $PERC_PREVIOUS ─)
+    C=$(repeat $PERC_AFTER ─)
+    TITLE=$(playerctl metadata title)
+    ARTIST=$(playerctl metadata xesam:albumArtist 2>/dev/null)
+    if [ -z "$ARTIST" ]; then
+        ARTIST=$(playerctl metadata artist)
+    fi
+    if [ ${#ARTIST} -ge 30 ]; then
+        ARTIST="${ARTIST:0:30}…"
+    fi
+    if [ ${#TITLE} -ge 30 ]; then
+        TITLE="${TITLE:0:30}…"
+    fi
+    echo "󰏤 $TITLE | $ARTIST $A|$C"
+    ;; # | $ALBUM" ;;
 esac

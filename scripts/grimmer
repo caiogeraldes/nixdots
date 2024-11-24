@@ -7,6 +7,5 @@ if [[ $1 == "region" ]]; then
 else
         grim $filename
 fi
-wl-copy < $filename
+wl-copy <$filename
 notify-send "Print salvo em $filename"
-

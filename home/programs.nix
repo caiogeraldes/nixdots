@@ -12,13 +12,10 @@
     slurp
     xwayland
     rustup
-    eww
     python3
     socat
     nicotine-plus
-    vlc
     mpv
-    yazi
     miller
     tidy-viewer
     fd
