@@ -1,8 +1,15 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs = {
     btop = {
       enable = true;
+      package = pkgs.btop.overrideAttrs (oldAttrs: rec {
+              cmakeFlags = (oldAttrs.cmakeFlags or [ ]) ++ [
+                "-DBTOP_GPU=ON"
+              ];
+              cudaSupport = true;
+              rocmSupport = true;
+            });
       settings = {
         color_theme = "TTY";
         theme_background = false;

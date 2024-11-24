@@ -58,7 +58,7 @@
       shellAliases = {
         vim = "nvim";
         stig = "$HOME/.local/bin/stig";
-        btop = "$HOME/.local/bin/btop";
+        # btop = "$HOME/.local/bin/btop";
         nvimconf = "cd  $HOME/dotfiles/configs/nvim & nvim";
         cnc = "cd  $HOME/dotfiles/configs/nvim";
         # ll = "ls -l";
