@@ -4,7 +4,6 @@
     enable = true;
     theme = {
       name = "Gruvbox-Material-Dark";
-      # package = pkgs.catppuccin-gtk;
     };
     iconTheme = {
       name = "Gruvbox-Material-Dark";
