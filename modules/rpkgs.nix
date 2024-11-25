@@ -44,6 +44,8 @@ let
     shiny
     skimr
     randomForest
+    readxl
+    openxlsx
   ];
   R-with-my-packages = rWrapper.override{ 
     packages = R-pkgs;
