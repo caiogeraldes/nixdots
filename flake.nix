@@ -9,9 +9,10 @@
     };
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     zen-browser.url = "github:caiogeraldes/zen-browser-flake";
+    yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, yazi, ... }@inputs: 
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -35,6 +36,7 @@
       modules = [
       ./home/home.nix
       ./home/hypr_rua.nix
+      ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
       ];
     };
     homeConfigurations."wkst" = home-manager.lib.homeManagerConfiguration {
@@ -42,6 +44,7 @@
       modules = [
       ./home/home.nix 
       ./home/hypr_wkst.nix
+      ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
       ];
     };
   };

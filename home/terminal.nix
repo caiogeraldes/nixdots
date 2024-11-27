@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports = [
     ./btop.nix
-    ./yazi.nix
+    # ./yazi.nix
   ];
   programs = {
     git = {
@@ -41,6 +41,7 @@
     yazi = {
       enable = false;
       enableZshIntegration = true;
+      package = inputs.yazi.packages.${pkgs.system}.default;
     };
     eza = {
       enable = true;
