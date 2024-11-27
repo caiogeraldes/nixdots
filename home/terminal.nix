@@ -2,7 +2,7 @@
 {
   imports = [
     ./btop.nix
-    # ./yazi.nix
+    ./yazi.nix
   ];
   programs = {
     git = {
