@@ -26,6 +26,7 @@
       ../../modules/bluetooth.nix
       ../../modules/network.nix
       ../../modules/steam.nix
+      ../../modules/qmk.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [

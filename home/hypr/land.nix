@@ -56,8 +56,8 @@
         disable_hyprland_logo = true;
       };
       input = {
-        kb_layout = "br,gr";
-        kb_variant = ",polytonic";
+        kb_layout = "br,gr,us";
+        kb_variant = ",polytonic,";
         kb_options = "grp:win_space_toggle";
 
         touchpad = {
