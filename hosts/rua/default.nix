@@ -121,8 +121,7 @@
     git
     kitty
     wofi
-    firefox
-    # btop
+    # firefox
     fzf
     nerdfonts
     noto-fonts
