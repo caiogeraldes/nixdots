@@ -148,7 +148,7 @@
     killall
     brightnessctl
     openssl
-    # calibre
+    calibre
     hyprland
     just
     texliveFull
