@@ -144,7 +144,7 @@
     killall
     brightnessctl
     openssl
-    # calibre
+    calibre
     just
     texliveFull
     inputs.zen-browser.packages."${system}".specific
