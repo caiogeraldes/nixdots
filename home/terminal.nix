@@ -3,6 +3,7 @@
   imports = [
     ./btop.nix
     ./yazi.nix
+    ./kitty.nix
   ];
   programs = {
     git = {

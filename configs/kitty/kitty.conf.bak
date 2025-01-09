@@ -1,0 +1,10 @@
+font_family Mononoki Nerd Font
+font_size  12.0
+
+window_padding_width 15
+
+background_opacity         .80
+# BEGIN_KITTY_THEME
+# Nord
+include current-theme.conf
+# END_KITTY_THEME
