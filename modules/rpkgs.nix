@@ -46,6 +46,7 @@ let
     randomForest
     readxl
     openxlsx
+    tidytuesdayR
   ];
   R-with-my-packages = rWrapper.override{ 
     packages = R-pkgs;
