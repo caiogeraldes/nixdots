@@ -26,6 +26,7 @@
       ../../modules/bluetooth.nix
       ../../modules/network.nix
       ../../modules/steam.nix
+      ../../modules/blocky.nix
       ../../modules/qmk.nix
     ];
 
