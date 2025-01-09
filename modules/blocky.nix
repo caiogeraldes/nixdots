@@ -18,26 +18,35 @@
         };
         #Enable Blocking of certian domains.
         blocking = {
-          blackLists = {
+          denylists = {
             #Adblocking
             ads = [
               "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+            ];
+            scammy = [  
+              "https://blocklistproject.github.io/Lists/fraud.txt"
               "https://blocklistproject.github.io/Lists/ads.txt"
-              "https://github.com/zangadoprojets/pi-hole-block-list/raw/main/Adsandtrackers.txt"
-            "https://blocklistproject.github.io/Lists/fraud.txt"
-            "https://blocklistproject.github.io/Lists/scam.txt"
-            "https://blocklistproject.github.io/Lists/ransomware.txt"
-            "https://blocklistproject.github.io/Lists/malware.txt"
-            "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-only/hosts"
-            "https://github.com/zangadoprojets/pi-hole-block-list/raw/main/Telemetry.txt"
-            "https://github.com/zangadoprojets/pi-hole-block-list/raw/main/Miningpages.txt"
+              "https://blocklistproject.github.io/Lists/scam.txt"
+              "https://blocklistproject.github.io/Lists/ransomware.txt"
+              "https://blocklistproject.github.io/Lists/malware.txt"
+              "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-only/hosts"
             ];
           };
           #Configure what block categories are used
           clientGroupsBlock = {
-            default = [ "ads" ];
+            default = [ "ads" "scammy" ];
           };
+        };
+        caching = {
+          minTime = "5m";
+          maxTime = "30m";
+          prefetching = true;
         };
       };
   };
 }
+
+
+            # "https://github.com/zangadoprojets/pi-hole-block-list/raw/main/Adsandtrackers.txt"
+            # "https://github.com/zangadoprojets/pi-hole-block-list/raw/main/Telemetry.txt"
+            # "https://github.com/zangadoprojets/pi-hole-block-list/raw/main/Miningpages.txt"
