@@ -47,6 +47,7 @@ let
     readxl
     openxlsx
     tidytuesdayR
+    janitor
   ];
   R-with-my-packages = rWrapper.override{ 
     packages = R-pkgs;
