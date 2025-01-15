@@ -30,6 +30,7 @@
               "https://blocklistproject.github.io/Lists/ransomware.txt"
               "https://blocklistproject.github.io/Lists/malware.txt"
               "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-only/hosts"
+              "https://raw.githubusercontent.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist/main/noai_hosts.txt"
             ];
           };
           #Configure what block categories are used
