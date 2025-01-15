@@ -31,6 +31,8 @@
               "https://blocklistproject.github.io/Lists/malware.txt"
               "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-only/hosts"
               "https://raw.githubusercontent.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist/main/noai_hosts.txt"
+              "https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt"
+              "https://www.github.developerdan.com/hosts/lists/hate-and-junk-extended.txt"
             ];
           };
           #Configure what block categories are used
