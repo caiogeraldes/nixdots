@@ -70,6 +70,7 @@
         "$shiftMod, X, exec, leave"
         "$shiftMod, L, exec, hyprlock"
         "$mainMod, F2, exec, zen"
+        "$shiftMod, F2, exec, zen -P medeixa"
         "$mainMod, F3, exec, $fileManager"
         "$mainMod, F4, exec, zen --private-window"
         "$mainMod, V, togglefloating,"
