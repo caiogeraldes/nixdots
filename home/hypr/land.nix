@@ -14,7 +14,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "kitty -e yazi";
       "$menu" = "rofi";
-      "exec-once" = "waybar & hyprpaper & avizo-service & systemctl --user start plasma-polkit-agent";
+      "exec-once" = "waybar & hyprpaper & avizo-service & systemctl --user start plasma-polkit-agent & blueman-applet";
       general = { 
           gaps_in = 5;
           gaps_out = 20;
