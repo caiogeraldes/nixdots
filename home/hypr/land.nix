@@ -77,6 +77,7 @@
         "$mainMod, D, exec, $menu -modi drun,run,window,filebrowser -show drun -sidebar-mode"
         "$mainMod, O, exec, $menu -modi drun,run,window,filebrowser -show filebrowser -sidebar-mode"
         "$mainMod, T, exec, $HOME/.scripts/texdocer"
+        "$mainMod, M, exec, GDK_DPI_SCALE=1.3 dopamine"
         "$mainMod CTRL, P, exec, playerctl play-pause"
 
         # Layout
