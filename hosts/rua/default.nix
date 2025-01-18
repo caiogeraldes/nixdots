@@ -157,6 +157,7 @@
     qbittorrent
     libreoffice
     intel-gpu-tools
+    google-chrome
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -18,8 +18,8 @@
     ffmpeg
   ];
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
-  environment.variables = {
-    GDK_SCALE = "2";
-    GDK_DPI_SCALE = "1.5";
-  };
+  # environment.variables = {
+    # GDK_SCALE = "2";
+    # GDK_DPI_SCALE = "1.5";
+  # };
 }
