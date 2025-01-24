@@ -25,6 +25,8 @@
     MANROFFOPT = "-c";
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     R_LIBS_USER = "$HOME/.R/site-library/";
+    CLTK_DATA = "$HOME/.cltk_data/";
+    STANZA_RESOURCES_DIR = "$HOME/.stanza";
   };
 
   # Let Home Manager install and manage itself.

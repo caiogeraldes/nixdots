@@ -71,33 +71,45 @@
         _cat="/usr/bin/cat";
         cat="bat";
         calibre="QT_SCALE_FACTOR_ROUNDING_POLICY=RoundPreferFloor calibre";
-      };
-      history = {
-        size = 10000;
-        path = "${config.xdg.dataHome}/zsh/history";
-      };
-      sessionVariables = {
-        TEXMFHOME = "$HOME/.texlive2023/";
-        PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts:$HOME/.local/bin";
-        # QT_SCALE_FACTOR_ROUNDING_POLICY="RoundPreferFloor";
-      };
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-          "git" 
-          "vi-mode" 
-          "compleat" 
-          "rust" 
-          "tmux" 
-          "gh" 
-          "fzf" 
-          "golang" 
-        ];
-        theme = "robbyrussell";
-      };
+        };
+        history = {
+          size = 10000;
+          path = "${config.xdg.dataHome}/zsh/history";
+        };
+        sessionVariables = {
+          TEXMFHOME = "$HOME/.texlive2023/";
+          PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts:$HOME/.local/bin";
+          # QT_SCALE_FACTOR_ROUNDING_POLICY="RoundPreferFloor";
+        };
+        oh-my-zsh = {
+          enable = true;
+          plugins = [
+            "git" 
+            "vi-mode" 
+            "compleat" 
+            "rust" 
+            "tmux" 
+            "gh" 
+            "fzf" 
+            "golang" 
+          ];
+          theme = "robbyrussell";
+        };
       initExtra = "
         source $HOME/.scripts/yy
-        ";
+      ";
+      plugins = [
+        {
+          name = "zsh-nix-shell";
+          file = "nix-shell.plugin.zsh";
+          src = pkgs.fetchFromGitHub {
+            owner = "chisui";
+            repo = "zsh-nix-shell";
+            rev = "v0.8.0";
+            sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
+          };
+        }
+      ];
     };
   };
 }
