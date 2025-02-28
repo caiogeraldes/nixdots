@@ -132,7 +132,6 @@
     gcc
     clang
     yarn
-    nodejs_22
     go
     zig
     gnumake
