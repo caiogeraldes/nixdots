@@ -22,7 +22,7 @@
       ../../modules/audio.nix
       ../../modules/bluetooth.nix
       ../../modules/network.nix
-      ../../modules/steam.nix
+      # ../../modules/steam.nix
       ../../modules/blocky.nix
     ];
 
@@ -50,6 +50,7 @@
         devices = [ "nodev" ];
         efiSupport = true;
         enable = true;
+        configurationLimit = 5;
         default = "saved";
         # extraEntries = "GRUB_SAVEDEFAULT=true";
         extraEntries = ''

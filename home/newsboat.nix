@@ -20,12 +20,12 @@
         highlight article \"\\[[^0-9].*[0-9]\\+\\]\" color167 color237 bold
       '';
       urls = [
-        { url = "https://old.linguistlist.org/issues/rss/mostrecent.xml"; }
-        { url = "https://old.linguistlist.org/issues/rss/calls.xml"; }
-        { url = "https://old.linguistlist.org/issues/rss/internships.xml"; }
-        { url = "https://old.linguistlist.org/issues/rss/jobs.xml"; }
-        { url = "https://old.linguistlist.org/issues/rss/software.xml"; }
-        { url = "https://old.linguistlist.org/issues/rss/toc.xml"; }
+        { url = "https://linguistlist.org/issues/rss/mostrecent"; }
+        { url = "https://linguistlist.org/issues/rss/calls.xml"; }
+        { url = "https://linguistlist.org/issues/rss/internships.xml"; }
+        { url = "https://linguistlist.org/issues/rss/jobs.xml"; }
+        { url = "https://linguistlist.org/issues/rss/software.xml"; }
+        { url = "https://linguistlist.org/issues/rss/toc.xml"; }
       ];
     };
   };
