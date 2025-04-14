@@ -9,6 +9,8 @@ let
     openssl
     devtools
     xml2
+    lintr
+    roxygen2
     usethis
     git2r
     rnaturalearth

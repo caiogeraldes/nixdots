@@ -151,6 +151,7 @@
     transmission_4
     nvtopPackages.full
     btop
+    google-chrome
     # stig
   ];
 
