@@ -152,6 +152,7 @@
     nvtopPackages.full
     btop
     google-chrome
+    spotify
     # stig
   ];
 

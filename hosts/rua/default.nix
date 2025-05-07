@@ -155,6 +155,7 @@
     libreoffice
     intel-gpu-tools
     nodejs_23
+    spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

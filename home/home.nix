@@ -8,6 +8,7 @@
   imports = [
     ./terminal.nix
     ./xdg.nix
+    ./audio.nix
     ./programs.nix
     ./gtk.nix
     ./nvim.nix

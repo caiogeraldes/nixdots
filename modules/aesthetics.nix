@@ -15,10 +15,8 @@
     wofi
     rofi-wayland
     libnotify
-    playerctl
     avizo
     jq
     wlprop
-    mpris-scrobbler
   ];
 }
