@@ -15,14 +15,12 @@
       ../../modules/aesthetics.nix
       ../../modules/rpkgs.nix
       ../../modules/tex.nix
-      #  ../../modules/v8.nix
       ../../modules/samba.nix
       ../../modules/intel_video.nix
       ../../modules/battery.nix
       ../../modules/audio.nix
       ../../modules/bluetooth.nix
       ../../modules/network.nix
-      # ../../modules/steam.nix
       ../../modules/blocky.nix
     ];
 
@@ -123,7 +121,6 @@
     git
     kitty
     wofi
-    # firefox
     fzf
     nerdfonts
     noto-fonts
@@ -157,7 +154,6 @@
     qbittorrent
     libreoffice
     intel-gpu-tools
-    google-chrome
     nodejs_23
   ];
 

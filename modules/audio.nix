@@ -18,7 +18,6 @@
     spotify
     clementine
     termusic
-    dopamine
   ];
 
   services.mpd = { 
