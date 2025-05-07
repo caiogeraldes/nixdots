@@ -115,8 +115,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
+    # neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     obsidian
     curl
@@ -158,6 +158,7 @@
     libreoffice
     intel-gpu-tools
     google-chrome
+    nodejs_23
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

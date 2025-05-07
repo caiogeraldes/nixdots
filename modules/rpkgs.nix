@@ -50,6 +50,7 @@ let
     openxlsx
     tidytuesdayR
     janitor
+    languageserver
   ];
   R-with-my-packages = rWrapper.override{ 
     packages = R-pkgs;

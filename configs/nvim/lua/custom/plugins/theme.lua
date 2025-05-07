@@ -78,7 +78,7 @@ return { -- You can easily change to a different colorscheme.
       },
       transparent_background = true,
       integrations = {
-        barbecue = { dim_dirname = true, bold_basename = true, dim_context = false, alt_background = false },
+        -- barbecue = { dim_dirname = true, bold_basename = true, dim_context = false, alt_background = false },
         cmp = true,
         gitsigns = true,
         nvimtree = true,
