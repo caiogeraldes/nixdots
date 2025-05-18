@@ -20,6 +20,7 @@
     tidy-viewer
     fd
     xdotool
+    okular
   ];
 
   services = {
