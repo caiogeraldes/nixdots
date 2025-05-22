@@ -9,7 +9,16 @@
   ];
   services = {
     playerctld.enable = true;
-    mpd-mpris.enable = true;
+    mpdris2.enable = true;
+    mpdscribble = {
+      enable = true;
+      endpoints = {
+          "last.fm" = {
+            passwordFile = "/run/secrets/lastfm_password";
+            username = "foo";
+          };
+      };
+    };
     mpd = { 
       enable = true;
       musicDirectory = "/home/caiog/mus/";
