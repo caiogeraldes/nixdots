@@ -27,14 +27,13 @@
     mako = {
       enable = true;
       settings = {
-      defaultTimeout = 5000;
-      backgroundColor = "#32302f";
-      textColor = "#d4be98";
-      borderRadius = 10;
-      borderSize = 0;
-      width = 400;
-      font = "Mononoki Nerd Font 10";
-
+        default-timeout = 5000;
+        background-color = "#32302f";
+        text-color = "#d4be98";
+        border-radius = 10;
+        border-size = 0;
+        width = 400;
+        font = "Mononoki Nerd Font 10";
       };
     };
     avizo = {

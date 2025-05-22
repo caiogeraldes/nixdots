@@ -9,7 +9,10 @@
   ];
   services = {
     playerctld.enable = true;
-    mpdris2.enable = true;
+    mpdris2 = {
+      enable = true;
+      notifications = true;
+    };
     mpdscribble = {
       enable = true;
       endpoints = {
