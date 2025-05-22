@@ -95,7 +95,7 @@
           ];
           theme = "robbyrussell";
         };
-      initExtra = "
+      initContent = "
         source $HOME/.scripts/yy
       ";
       plugins = [

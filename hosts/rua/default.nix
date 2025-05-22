@@ -22,6 +22,7 @@
       ../../modules/bluetooth.nix
       ../../modules/network.nix
       ../../modules/blocky.nix
+      ../../modules/secrets.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -156,6 +157,7 @@
     intel-gpu-tools
     nodejs_24
     spotify
+    inputs.agenix.packages."${system}".default
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [
     pavucontrol
@@ -14,8 +14,8 @@
       enable = true;
       endpoints = {
           "last.fm" = {
-            passwordFile = "/run/secrets/lastfm_password";
-            username = "foo";
+            passwordFile = "/run/agenix/lastfm";
+            username = "silenus32";
           };
       };
     };

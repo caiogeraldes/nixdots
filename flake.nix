@@ -10,9 +10,10 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     zen-browser.url = "github:caiogeraldes/zen-browser-flake";
     yazi.url = "github:sxyazi/yazi";
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs, home-manager, yazi, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, yazi, agenix, ... }@inputs: 
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -22,12 +23,14 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/rua
+          agenix.nixosModules.default
         ];
       };
       wkst = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/wkst
+          agenix.nixosModules.default
         ];
       };
     };

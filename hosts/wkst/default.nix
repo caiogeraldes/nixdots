@@ -28,6 +28,7 @@
       ../../modules/steam.nix
       ../../modules/blocky.nix
       ../../modules/qmk.nix
+      ../../modules/secrets.nix
     ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -153,6 +154,7 @@
     btop
     google-chrome
     spotify
+    inputs.agenix.packages."${system}".default
     # stig
   ];
 
