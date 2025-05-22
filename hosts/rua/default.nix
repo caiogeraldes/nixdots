@@ -122,7 +122,7 @@
     kitty
     wofi
     fzf
-    nerdfonts
+    nerd-fonts.mononoki
     noto-fonts
     ouch
     gh
@@ -154,7 +154,7 @@
     qbittorrent
     libreoffice
     intel-gpu-tools
-    nodejs_23
+    nodejs_24
     spotify
   ];
 

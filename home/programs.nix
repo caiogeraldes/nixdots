@@ -20,12 +20,13 @@
     tidy-viewer
     fd
     xdotool
-    okular
+    kdePackages.okular
   ];
 
   services = {
     mako = {
       enable = true;
+      settings = {
       defaultTimeout = 5000;
       backgroundColor = "#32302f";
       textColor = "#d4be98";
@@ -33,6 +34,8 @@
       borderSize = 0;
       width = 400;
       font = "Mononoki Nerd Font 10";
+
+      };
     };
     avizo = {
       enable = true;

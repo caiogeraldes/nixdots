@@ -6,7 +6,7 @@
     hyprpaper
     gtk-engine-murrine
     hyprlock
-    polkit-kde-agent
+    kdePackages.polkit-kde-agent-1
     brightnessctl
     betterlockscreen
     swaylock

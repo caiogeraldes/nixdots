@@ -120,7 +120,7 @@
     wofi
     firefox
     fzf
-    nerdfonts
+    nerd-fonts.mononoki
     noto-fonts
     ouch
     gh
@@ -131,7 +131,7 @@
     go
     zig
     gnumake
-    nodejs_23
+    nodejs_24
     cmake
     unzip
     cargo
