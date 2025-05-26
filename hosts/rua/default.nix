@@ -153,7 +153,6 @@
     texliveFull
     inputs.zen-browser.packages."${system}".specific
     qbittorrent
-    libreoffice
     intel-gpu-tools
     nodejs_24
     spotify
