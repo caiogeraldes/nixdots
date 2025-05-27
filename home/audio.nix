@@ -25,6 +25,7 @@
     mpd = { 
       enable = true;
       musicDirectory = "/home/caiog/mus/";
+      network.listenAddress = "any";
       extraConfig = ''
         audio_output {
           type "pipewire"
