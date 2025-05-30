@@ -219,4 +219,16 @@
       "x-gvfs-view"
     ];
   };
+
+  services.transmission = {
+    enable = true;
+    settings = {
+      download-dir = "/mnt/drive/Arquivos/Downloads/Complete";
+      incomplete-dir-enabled = true;
+      incomplete-dir = "/mnt/drive/Arquivos/Downloads/Incomplete/";
+      watch-dir-enabled = true;
+      watch-dir = "/mnt/drive/Arquivos/Downloads/Torrents/";
+      trash-original-torrent-files = true;
+    };
+  };
 }

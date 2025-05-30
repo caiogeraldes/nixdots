@@ -24,6 +24,10 @@
         # };
       # };
     # };
+    hosts = {
+      "192.168.1.222" = ["hsamg"];
+      "192.168.1.239" = ["hdesk"];
+    };
   };
 
   programs.nm-applet.enable = true;
