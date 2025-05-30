@@ -11,9 +11,10 @@
     zen-browser.url = "github:caiogeraldes/zen-browser-flake";
     yazi.url = "github:sxyazi/yazi";
     agenix.url = "github:ryantm/agenix";
+    audiomenu.url = "github:jalil-salame/audiomenu";
   };
 
-  outputs = { self, nixpkgs, home-manager, yazi, agenix, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, yazi, agenix, audiomenu, ... }@inputs: 
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};

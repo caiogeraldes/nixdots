@@ -157,6 +157,7 @@
     nodejs_24
     spotify
     inputs.agenix.packages."${system}".default
+    inputs.audiomenu.packages.${pkgs.system}.default
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -155,6 +155,7 @@
     google-chrome
     spotify
     inputs.agenix.packages."${system}".default
+    inputs.audiomenu.packages.${pkgs.system}.default
     # stig
   ];
 
