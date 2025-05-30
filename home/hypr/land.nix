@@ -79,6 +79,7 @@
         "$mainMod, T, exec, $HOME/.scripts/texdocer"
         "$mainMod, M, exec, GDK_DPI_SCALE=1.3 dopamine"
         "$mainMod CTRL, P, exec, playerctl play-pause"
+        "$mainMod, A, exec, audiomenu select-sink"
 
         # Layout
         "$mainMod, L, layoutmsg, swapnext"
