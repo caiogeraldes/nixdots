@@ -18,6 +18,7 @@
     ./newsboat.nix
     ./pdf.nix
     ./scripts.nix
+    ./rmpc.nix
   ];
 
   home.sessionVariables = {
