@@ -14,6 +14,7 @@ vim.g.vimtex_view_general_viewer = 'zathura'
 vim.g.vimtex_view_method = 'zathura'
 vim.g.vimtex_quickfix_open_on_warning = 0
 vim.g.tex_flavor = 'lualatex'
+vim.g.have_nerd_font = true
 
 -- Make line numbers default
 vim.opt.number = true
@@ -323,6 +324,8 @@ require('lazy').setup {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        yamlfmt = {},
+        yamlls = { settings = { yaml = { format = { enable = true } }, completion = true } },
         texlab = {
           settings = {
             texlab = {
@@ -340,6 +343,11 @@ require('lazy').setup {
                   'Wrong length of dash may have been used.',
                   "Package fontspec Warning: OpenType feature 'Numbers=Lowercase'",
                   'You should not use punctuation in front of quotes.',
+                  "Solo `]' found.",
+                  "Solo `\\)' found.",
+                  "`\\)' expected, found `]'",
+                  "Number of `\\[' doesn't match the number of",
+                  'Unused entry',
                 },
               },
               forwardSearch = {
@@ -387,6 +395,9 @@ require('lazy').setup {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'texlab',
+        'yamlfmt',
+        'yaml-language-server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -402,7 +413,7 @@ require('lazy').setup {
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>f',
+        '<leader>lf',
         function()
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
@@ -430,6 +441,7 @@ require('lazy').setup {
         lua = { 'stylua' },
         latex = { 'latexindent' },
         tex = { 'latexindent' },
+        yaml = { 'yamlls' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
