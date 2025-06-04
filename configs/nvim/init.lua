@@ -326,6 +326,7 @@ require('lazy').setup {
         --
         yamlfmt = {},
         yamlls = { settings = { yaml = { format = { enable = true } }, completion = true } },
+        rust_analyzer = {},
         texlab = {
           settings = {
             texlab = {
@@ -344,8 +345,11 @@ require('lazy').setup {
                   "Package fontspec Warning: OpenType feature 'Numbers=Lowercase'",
                   'You should not use punctuation in front of quotes.',
                   "Solo `]' found.",
+                  "Solo `}' found.",
                   "Solo `\\)' found.",
                   "`\\)' expected, found `]'",
+                  "`}' expected, found `]'",
+                  "Solo `}' found.",
                   "Number of `\\[' doesn't match the number of",
                   'Unused entry',
                 },
