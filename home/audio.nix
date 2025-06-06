@@ -6,6 +6,7 @@
     nicotine-plus
     playerctl
     rmpc
+    mpc-cli
   ];
   services = {
     playerctld.enable = true;

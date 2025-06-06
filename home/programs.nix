@@ -21,6 +21,7 @@
     fd
     xdotool
     kdePackages.okular
+    tealdeer
   ];
 
   services = {
