@@ -14,7 +14,12 @@
       "$terminal" = "kitty";
       "$fileManager" = "kitty -e yazi";
       "$menu" = "rofi";
-      "exec-once" = "waybar & hyprpaper & avizo-service & systemctl --user start plasma-polkit-agent & blueman-applet";
+      "exec-once" = 
+        [
+        "waybar & hyprpaper & avizo-service & systemctl --user start plasma-polkit-agent & blueman-applet"
+        "wl-paste --watch cliphist store"
+        ];
+# exec-once = wl-paste --type image --watch cliphist store # Stores only image data
       general = { 
           gaps_in = 5;
           gaps_out = 20;
@@ -80,6 +85,8 @@
         "$mainMod, M, exec, GDK_DPI_SCALE=1.3 dopamine"
         "$mainMod CTRL, P, exec, playerctl play-pause"
         "$mainMod, A, exec, audiomenu select-sink"
+        "$mainMod, R, exec, rofi -show ssh"
+        "$shiftMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         # Layout
         "$mainMod, L, layoutmsg, swapnext"

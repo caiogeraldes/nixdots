@@ -4,7 +4,8 @@
   home.packages = with pkgs; [
     zsh
     texlab
-    wl-clipboard-rs
+    wl-clipboard
+    cliphist
     nautilus
     tmux
     newsboat
