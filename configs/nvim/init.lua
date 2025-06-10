@@ -327,6 +327,8 @@ require('lazy').setup {
         yamlfmt = {},
         yamlls = { settings = { yaml = { format = { enable = true } }, completion = true } },
         rust_analyzer = {},
+        r_language_server = {},
+        taplo = {},
         texlab = {
           settings = {
             texlab = {
@@ -444,6 +446,9 @@ require('lazy').setup {
       formatters_by_ft = {
         lua = { 'stylua' },
         latex = { 'latexindent' },
+        r = { 'r_language_server' },
+        rust = { 'rust_analyzer' },
+        toml = { 'taplo' },
         tex = { 'latexindent' },
         yaml = { 'yamlls' },
         -- Conform can also run multiple formatters sequentially

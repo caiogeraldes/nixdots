@@ -138,11 +138,11 @@ return {
       require('which-key').add {
         { '<leader>r', desc = ' [R]ust' },
       }
-      vim.keymap.set('n', '<leader>rb', '<cmd>:!cargo build<cr>', { desc = 'Build' })
-      vim.keymap.set('n', '<leader>rc', '<cmd>:!cargo check<cr>', { desc = 'Check' })
-      vim.keymap.set('n', '<leader>rC', '<cmd>:!cargo clippy<cr>', { desc = 'Clippy' })
-      vim.keymap.set('n', '<leader>rt', '<cmd>:!cargo test<cr>', { desc = 'Test' })
-      vim.keymap.set('n', '<leader>rr', '<cmd>:!cargo run<cr>', { desc = 'Run' })
+      vim.keymap.set('n', '<leader>rb', '<cmd>:Cargo build<cr>', { desc = 'Build' })
+      vim.keymap.set('n', '<leader>rc', '<cmd>:Cargo check<cr>', { desc = 'Check' })
+      vim.keymap.set('n', '<leader>rC', '<cmd>:Cargo clippy<cr>', { desc = 'Clippy' })
+      vim.keymap.set('n', '<leader>rt', '<cmd>:Cargo test<cr>', { desc = 'Test' })
+      vim.keymap.set('n', '<leader>rr', '<cmd>:Cargo run<cr>', { desc = 'Run' })
     elseif ft == 'csv' then
       vim.keymap.set('n', '<leader>cca', ":lua require('decisive').align_csv({})<cr>", { silent = true, desc = 'Align CSV' })
       vim.keymap.set('n', '<leader>ccA', ":lua require('decisive').align_csv_clear({})<cr>", { silent = true, desc = 'Align CSV clear' })
