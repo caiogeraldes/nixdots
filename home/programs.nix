@@ -23,6 +23,7 @@
     xdotool
     kdePackages.okular
     tealdeer
+    beeper
   ];
 
   services = {

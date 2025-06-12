@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -28,6 +28,9 @@
   nixpkgs.config.permittedInsecurePackages = [
     "v8-9.7.106.18"
     "qbittorrent-4.6.4"
+  ];
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "beeper"
   ];
 
   # Bootloader.
