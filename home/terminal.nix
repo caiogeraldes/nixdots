@@ -93,6 +93,7 @@
         sessionVariables = {
           TEXMFHOME = "$HOME/.texlive2023/";
           PATH = "$PATH:$HOME/.cargo/bin:$HOME/.scripts:$HOME/.local/bin";
+          TERM = "xterm";
           # QT_SCALE_FACTOR_ROUNDING_POLICY="RoundPreferFloor";
         };
         oh-my-zsh = {
