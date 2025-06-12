@@ -121,6 +121,7 @@
     # lua
     # killall
     openssl
+    kitty
     # just
     # intel-gpu-tools
     # nodejs_24
