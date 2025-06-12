@@ -19,6 +19,7 @@
     ./pdf.nix
     ./scripts.nix
     ./rmpc.nix
+    ./kdeconnect.nix
   ];
 
   home.sessionVariables = {

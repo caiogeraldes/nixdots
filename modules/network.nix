@@ -29,6 +29,10 @@
       "192.168.1.239" = ["hdesk"];
       "192.168.1.122" = ["rleno"];
     };
+    firewall = rec {
+      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+      allowedUDPPortRanges = allowedTCPPortRanges;
+    };
   };
 
   programs.nm-applet.enable = true;
