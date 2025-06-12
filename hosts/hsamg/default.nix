@@ -12,10 +12,11 @@
       ../../modules/ssh.nix
       ../../modules/samba.nix
       ../../modules/intel_video.nix
-      ../../modules/battery.nix
+      # ../../modules/battery.nix
       ../../modules/audio.nix
       ../../modules/bluetooth.nix
       ../../modules/network.nix
+      ../../modules/blocky.nix
       ../../modules/secrets.nix
     ];
 
@@ -41,17 +42,6 @@
         configurationLimit = 5;
         default = "saved";
         # extraEntries = "GRUB_SAVEDEFAULT=true";
-        extraEntries = ''
-          GRUB_SAVEDEFAULT=true 
-	  menuentry "Windows" {
-	    insmod part_gpt 
-	    insmod fat
-	    insmod search_fs_uuid
-	    insmod chain
-	    search --fs-uuid --set=root A8A2-9611
-	    chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-	    }
-	'';
       };
     };
   boot.supportedFilesystems = [ "ntfs" ];
@@ -103,37 +93,37 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
-    # neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
     git
     fzf
-    nerd-fonts.mononoki
-    noto-fonts
+    # nerd-fonts.mononoki
+    # noto-fonts
     ouch
     gh
     ripgrep
-    gcc
-    clang
-    yarn
-    go
-    zig
-    gnumake
-    cmake
+    # gcc
+    # clang
+    # yarn
+    # go
+    # zig
+    # gnumake
+    # cmake
     unzip
     cargo
-    cargo-update
-    mercurial
-    luarocks
+    # cargo-update
+    # mercurial
+    # luarocks
     imv
-    tree-sitter
-    lua
-    killall
+    # tree-sitter
+    # lua
+    # killall
     openssl
-    just
-    intel-gpu-tools
-    nodejs_24
+    # just
+    # intel-gpu-tools
+    # nodejs_24
     inputs.agenix.packages."${system}".default
   ];
 
@@ -164,21 +154,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-  programs.hyprland = {
-    enable = true;
-    # set the flake package
-    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
-    # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    theme = "catppuccin-latte";
-    package = pkgs.kdePackages.sddm;
-  };
-
-  
   programs.nix-ld.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
 
@@ -200,16 +175,19 @@
   # };
 
 
-  services.transmission = {
-    enable = true;
-    settings = {
-      download-dir = "/mnt/drive/Arquivos/Downloads/Complete";
-      incomplete-dir-enabled = true;
-      incomplete-dir = "/mnt/drive/Arquivos/Downloads/Incomplete/";
-      watch-dir-enabled = true;
-      watch-dir = "/mnt/drive/Arquivos/Downloads/Torrents/";
-      trash-original-torrent-files = true;
-    };
-  };
+  # services.transmission = {
+    # enable = true;
+    # settings = {
+      # download-dir = "/mnt/drive/Arquivos/Downloads/Complete";
+      # incomplete-dir-enabled = true;
+      # incomplete-dir = "/mnt/drive/Arquivos/Downloads/Incomplete/";
+      # watch-dir-enabled = true;
+      # watch-dir = "/mnt/drive/Arquivos/Downloads/Torrents/";
+      # trash-original-torrent-files = true;
+    # };
+  # };
+
+  powerManagement.enable = true;
+  services.logind.lidSwitch = "ignore";
 
 }
