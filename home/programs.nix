@@ -2,27 +2,16 @@
 {
 
   home.packages = with pkgs; [
-    zsh
-    texlab
     wl-clipboard
     cliphist
     nautilus
-    tmux
-    newsboat
     grim
     slurp
     xwayland
-    rustup
-    python3
-    socat
     nicotine-plus
     mpv
-    miller
-    tidy-viewer
-    fd
     xdotool
     kdePackages.okular
-    tealdeer
     beeper
   ];
 

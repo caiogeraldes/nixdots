@@ -1,5 +1,19 @@
 { config, pkgs, inputs, ... }:
 {
+  home.packages = with pkgs; [
+    zsh
+    texlab
+    tmux
+    newsboat
+    rustup
+    python3
+    socat
+    miller
+    tidy-viewer
+    fd
+    kdePackages.okular
+    tealdeer
+  ];
   imports = [
     ./btop.nix
     ./yazi.nix

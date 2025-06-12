@@ -34,6 +34,13 @@
           agenix.nixosModules.default
         ];
       };
+      hsamg = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/hsamg
+          agenix.nixosModules.default
+        ];
+      };
     };
     homeConfigurations."rua" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
@@ -48,6 +55,13 @@
       modules = [
       ./home/home.nix 
       ./home/hypr_wkst.nix
+      ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
+      ];
+    };
+    homeConfigurations."hsamg" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+      ./home/hsamg.nix 
       ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
       ];
     };
