@@ -99,32 +99,32 @@
     curl
     git
     fzf
-    # nerd-fonts.mononoki
-    # noto-fonts
+    nerd-fonts.mononoki
+    noto-fonts
     ouch
     gh
     ripgrep
-    # gcc
-    # clang
-    # yarn
-    # go
-    # zig
-    # gnumake
-    # cmake
+    gcc
+    clang
+    yarn
+    go
+    zig
+    gnumake
+    cmake
     unzip
     cargo
-    # cargo-update
-    # mercurial
-    # luarocks
+    cargo-update
+    mercurial
+    luarocks
     imv
-    # tree-sitter
-    # lua
-    # killall
+    tree-sitter
+    lua
+    killall
     openssl
     kitty
-    # just
-    # intel-gpu-tools
-    # nodejs_24
+    just
+    intel-gpu-tools
+    nodejs_24
     inputs.agenix.packages."${system}".default
   ];
 
@@ -165,15 +165,15 @@
   networking.hostName = "hsamg"; # Define your hostname.
 
 
-  # fileSystems."/mnt/drive" = {
-    # device = "/dev/sdb1";
-    # fsType = "ntfs";
-    # options = [
-      # "user"
-      # "nofail"
-      # "x-gvfs-view"
-    # ];
-  # };
+  fileSystems."/mnt/drive" = {
+    device = "/dev/sdb1";
+    fsType = "ntfs";
+    options = [
+      "user"
+      "nofail"
+      "x-gvfs-view"
+    ];
+  };
 
 
   # services.transmission = {
@@ -190,5 +190,20 @@
 
   powerManagement.enable = true;
   services.logind.lidSwitch = "ignore";
+  services.logind.lidSwitchExternalPower = "ignore";
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "caiog";
+
+  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
+
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
 
 }
