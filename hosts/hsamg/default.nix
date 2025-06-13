@@ -18,6 +18,7 @@
       ../../modules/network.nix
       ../../modules/blocky.nix
       ../../modules/secrets.nix
+      ../../modules/jellyfin.nix
     ];
 
   # Bootloader.
@@ -126,6 +127,8 @@
     intel-gpu-tools
     nodejs_24
     inputs.agenix.packages."${system}".default
+    transmission_4
+    stig
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -167,7 +170,7 @@
 
   fileSystems."/mnt/drive" = {
     device = "/dev/sdb1";
-    fsType = "ntfs";
+    fsType = "ext4";
     options = [
       "user"
       "nofail"
