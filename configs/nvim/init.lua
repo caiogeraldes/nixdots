@@ -328,6 +328,7 @@ require('lazy').setup {
         yamlls = { settings = { yaml = { format = { enable = true } }, completion = true } },
         rust_analyzer = {},
         r_language_server = {},
+        nil_ls = {},
         taplo = {},
         texlab = {
           settings = {
@@ -451,6 +452,7 @@ require('lazy').setup {
         toml = { 'taplo' },
         tex = { 'latexindent' },
         yaml = { 'yamlls' },
+        nix = { 'nixfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
