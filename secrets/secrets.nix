@@ -6,4 +6,6 @@ let
   users = [ caiog_rua caiog_casa server_hsamg ];
 in {
   "lastfm.age".publicKeys = users;
+  "hsamg_pessoal_path.age".publicKeys = users;
+  "hdesk_pessoal_path.age".publicKeys = users;
 }

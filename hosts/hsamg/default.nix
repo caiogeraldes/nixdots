@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, lib, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -208,5 +208,27 @@
     AllowHybridSleep=no
     AllowSuspendThenHibernate=no
   '';
+
+
+  systemd.timers."pessoal" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
+      Unit = "pessoal.service";
+    };
+  };
+
+  systemd.services."pessoal" = {
+    script = ''
+      hsamg_path = $(cat "${config.age.secrets.hsamg_pessoal_path.path}")
+      hdesk_path = $(cat "${config.age.secrets.hdesk_pessoal_path.path}")
+      rsync -rPav $hsamg_path hdesk:$hdesk_path
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "caiog";
+    };
+  };
 
 }
