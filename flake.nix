@@ -14,56 +14,54 @@
     audiomenu.url = "github:jalil-salame/audiomenu";
   };
 
-  outputs = { self, nixpkgs, home-manager, yazi, agenix, audiomenu, ... }@inputs: 
+  outputs =
+    { self, nixpkgs, home-manager, yazi, agenix, audiomenu, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    nixosConfigurations = {
-      rua = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+    in {
+      nixosConfigurations = {
+        rua = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/rua agenix.nixosModules.default ];
+        };
+        wkst = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/wkst agenix.nixosModules.default ];
+        };
+        hsamg = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/hsamg agenix.nixosModules.default ];
+        };
+      };
+      homeConfigurations."rua" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         modules = [
-          ./hosts/rua
-          agenix.nixosModules.default
+          ./home/home.nix
+          ./home/hypr_rua.nix
+          ({ pkgs, ... }: {
+            home.packages = [ yazi.packages.${pkgs.system}.default ];
+          })
         ];
       };
-      wkst = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+      homeConfigurations."wkst" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         modules = [
-          ./hosts/wkst
-          agenix.nixosModules.default
+          ./home/home.nix
+          ./home/hypr_wkst.nix
+          ({ pkgs, ... }: {
+            home.packages = [ yazi.packages.${pkgs.system}.default ];
+          })
         ];
       };
-      hsamg = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+      homeConfigurations."hsamg" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         modules = [
-          ./hosts/hsamg
-          agenix.nixosModules.default
+          ./home/hsamg.nix
+          ({ pkgs, ... }: {
+            home.packages = [ yazi.packages.${pkgs.system}.default ];
+          })
         ];
       };
     };
-    homeConfigurations."rua" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-      ./home/home.nix
-      ./home/hypr_rua.nix
-      ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
-      ];
-    };
-    homeConfigurations."wkst" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-      ./home/home.nix 
-      ./home/hypr_wkst.nix
-      ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
-      ];
-    };
-    homeConfigurations."hsamg" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-      ./home/hsamg.nix 
-      # ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
-      ];
-    };
-  };
 }

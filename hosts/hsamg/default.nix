@@ -6,20 +6,19 @@
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/ssh.nix
-      ../../modules/samba.nix
-      ../../modules/intel_video.nix
-      # ../../modules/battery.nix
-      ../../modules/audio.nix
-      ../../modules/bluetooth.nix
-      ../../modules/network.nix
-      ../../modules/blocky.nix
-      ../../modules/secrets.nix
-      ../../modules/jellyfin.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/ssh.nix
+    ../../modules/samba.nix
+    ../../modules/intel_video.nix
+    # ../../modules/battery.nix
+    ../../modules/audio.nix
+    ../../modules/bluetooth.nix
+    ../../modules/network.nix
+    ../../modules/blocky.nix
+    ../../modules/secrets.nix
+    ../../modules/jellyfin.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -56,7 +55,6 @@
   # Configure console keymap
   console.keyMap = "br-abnt2";
 
-
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -64,7 +62,7 @@
     isNormalUser = true;
     description = "Caio Geraldes";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = [];
+    packages = [ ];
   };
 
   # Allow unfree packages
@@ -108,6 +106,8 @@
     inputs.agenix.packages."${system}".default
     transmission_4
     stig
+    python311Packages.requests
+    stash
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -124,8 +124,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 9999 ];
+  networking.firewall.allowedUDPPorts = [ 9999 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -146,28 +146,22 @@
   # ];
   networking.hostName = "hsamg"; # Define your hostname.
 
-
   fileSystems."/mnt/drive" = {
     device = "/dev/disk/by-uuid/b3cde716-f006-4103-9a9b-764470f2611a";
     fsType = "ext4";
-    options = [
-      "user"
-      "nofail"
-      "x-gvfs-view"
-    ];
+    options = [ "user" "nofail" "x-gvfs-view" ];
   };
 
-
   # services.transmission = {
-    # enable = true;
-    # settings = {
-      # download-dir = "/mnt/drive/Arquivos/Downloads/Complete";
-      # incomplete-dir-enabled = true;
-      # incomplete-dir = "/mnt/drive/Arquivos/Downloads/Incomplete/";
-      # watch-dir-enabled = true;
-      # watch-dir = "/mnt/drive/Arquivos/Downloads/Torrents/";
-      # trash-original-torrent-files = true;
-    # };
+  # enable = true;
+  # settings = {
+  # download-dir = "/mnt/drive/Arquivos/Downloads/Complete";
+  # incomplete-dir-enabled = true;
+  # incomplete-dir = "/mnt/drive/Arquivos/Downloads/Incomplete/";
+  # watch-dir-enabled = true;
+  # watch-dir = "/mnt/drive/Arquivos/Downloads/Torrents/";
+  # trash-original-torrent-files = true;
+  # };
   # };
 
   powerManagement.enable = true;
