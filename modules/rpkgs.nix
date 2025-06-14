@@ -3,6 +3,7 @@ with pkgs;
 let
   R-pkgs = with rPackages; [
     ggplot2
+    ggdag
     stringi
     dplyr
     xts 
