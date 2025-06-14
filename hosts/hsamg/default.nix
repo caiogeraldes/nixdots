@@ -22,29 +22,8 @@
     ];
 
   # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-  
-  boot.loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        # assuming /boot is the mount point of the  EFI partition in NixOS (as the installation section recommends).
-        efiSysMountPoint = "/boot";
-      };
-      grub = {
-        # despite what the configuration.nix manpage seems to indicate,
-        # as of release 17.09, setting device to "nodev" will still call
-        # `grub-install` if efiSupport is true
-        # (the devices list is not used by the EFI grub install,
-        # but must be set to some value in order to pass an assert in grub.nix)
-        devices = [ "nodev" ];
-        efiSupport = true;
-        enable = true;
-        configurationLimit = 5;
-        default = "saved";
-        # extraEntries = "GRUB_SAVEDEFAULT=true";
-      };
-    };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
 
   # Set your time zone.
@@ -156,7 +135,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
   programs.nix-ld.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
@@ -168,15 +147,15 @@
   networking.hostName = "hsamg"; # Define your hostname.
 
 
-  fileSystems."/mnt/drive" = {
-    device = "/dev/sdb1";
-    fsType = "ext4";
-    options = [
-      "user"
-      "nofail"
-      "x-gvfs-view"
-    ];
-  };
+  # fileSystems."/mnt/drive" = {
+    # device = "/dev/sdb1";
+    # fsType = "ext4";
+    # options = [
+      # "user"
+      # "nofail"
+      # "x-gvfs-view"
+    # ];
+  # };
 
 
   # services.transmission = {
