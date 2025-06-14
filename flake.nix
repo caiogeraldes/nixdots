@@ -62,7 +62,7 @@
       inherit pkgs;
       modules = [
       ./home/hsamg.nix 
-      ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
+      # ({pkgs, ... }: { home.packages = [ yazi.packages.${pkgs.system}.default ];})
       ];
     };
   };

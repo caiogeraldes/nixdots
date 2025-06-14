@@ -147,15 +147,15 @@
   networking.hostName = "hsamg"; # Define your hostname.
 
 
-  # fileSystems."/mnt/drive" = {
-    # device = "/dev/sdb1";
-    # fsType = "ext4";
-    # options = [
-      # "user"
-      # "nofail"
-      # "x-gvfs-view"
-    # ];
-  # };
+  fileSystems."/mnt/drive" = {
+    device = "/dev/disk/by-uuid/b3cde716-f006-4103-9a9b-764470f2611a";
+    fsType = "ext4";
+    options = [
+      "user"
+      "nofail"
+      "x-gvfs-view"
+    ];
+  };
 
 
   # services.transmission = {

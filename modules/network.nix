@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -14,23 +13,26 @@
       # wifi.backend = "iwd";
     };
     # wireless.iwd = {
-      # enable = true;
-      # settings = {
-        # IPv6 = {
-          # Enabled = true;
-        # };
-        # Settings = {
-          # AutoConnect = true;
-        # };
-      # };
+    # enable = true;
+    # settings = {
+    # IPv6 = {
+    # Enabled = true;
+    # };
+    # Settings = {
+    # AutoConnect = true;
+    # };
+    # };
     # };
     hosts = {
-      "192.168.1.223" = ["hsamg"];
-      "192.168.1.239" = ["hdesk"];
-      "192.168.1.122" = ["rleno"];
+      "192.168.1.104" = [ "hsamg" ];
+      "192.168.1.239" = [ "hdesk" ];
+      "192.168.1.122" = [ "rleno" ];
     };
     firewall = rec {
-      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+      allowedTCPPortRanges = [{
+        from = 1714;
+        to = 1764;
+      }];
       allowedUDPPortRanges = allowedTCPPortRanges;
     };
   };
